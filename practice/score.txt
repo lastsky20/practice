@@ -1,0 +1,4 @@
+DATA 1 : 10
+DATA 2 : 30
+DATA 3 : 50
+DATA 4 : 100
