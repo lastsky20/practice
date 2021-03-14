@@ -22,3 +22,4 @@
 | git push origin main | Push Remote Repository(origin : remote, main : branch)|
 | git pull origin main | Pull Remote Repository(origin : remote, main : branch)|
 | git push -d origin branch | Delete Remote Branch(origin : remote, branch : remote branch)
+| git fetch | Show Remote Branch Status | 
