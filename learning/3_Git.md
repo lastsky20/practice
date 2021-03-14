@@ -17,4 +17,8 @@
 | git branch "BranchName" | Create Branch |
 | git checkout "BranchName" | Change Branch |
 | git merge "BranchName" | Merge Master Branch |
-| git merge -D "BranchName" | Delete Branch |
+| git branch -D "BranchName" | Delete Branch |
+| git branch -a | Show Branch List |
+| git push origin main | Push Remote Repository(origin : remote, main : branch)|
+| git pull origin main | Pull Remote Repository(origin : remote, main : branch)|
+| git push -d origin branch | Delete Remote Branch(origin : remote, branch : remote branch)
