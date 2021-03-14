@@ -19,7 +19,7 @@ btn_burger3.pack()
 
 Label(root, text = "음료를 선택 하세요.").pack()
 btn_drink = Radiobutton(root, text = "콜라", value = "콜라", variable = drink_var)
-
+btn_drink.select() 
 btn_drink2 = Radiobutton(root, text = "사이다", value = "사이다", variable = drink_var)
 btn_drink.pack()
 btn_drink2.pack()
@@ -34,4 +34,4 @@ def btnCmd1() :
 btn1 = Button(root, text = "버튼1", command = btnCmd1)
 btn1.pack()
 
-root.mainloop()
+root.mainloop() 
