@@ -12,9 +12,9 @@ def create_new_file() :
     print("새 파일을 만듭니다.")
 
 menu = Menu(root)   # menu 객체 생성
-menu_file = Menu(menu, tearoff = 0)  # menu 하위 트리 객체 생성
 
 # 파일 메뉴
+menu_file = Menu(menu, tearoff = 0)  # menu 하위 트리 객체 생성
 menu_file.add_command(label = "New File", command=create_new_file)  # 커맨드 "New File 생성"
 menu_file.add_command(label = "New Window")
 menu_file.add_separator()   # 구분자 생성
@@ -29,7 +29,7 @@ menu_file.add_command(label = "Exit", command = root.quit)
 menu.add_cascade(label = "Edit")
 root.config(menu = menu)
 
-# Radio 버튼 추가
+# Radio 버튼
 menu_lang = Menu(menu, tearoff = 0)
 menu_lang.add_radiobutton(label = "python")
 menu_lang.add_radiobutton(label = "JAVA")
