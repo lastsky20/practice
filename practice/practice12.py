@@ -8,7 +8,8 @@
 
 # print(x)
 
-
+str3 = "String"
+print(str3.lower())
 
 from scipy import stats
 
