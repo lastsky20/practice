@@ -15,7 +15,7 @@ root.geometry("640x480")
 
 
 p_var2 = DoubleVar()
-pvar = ttk.Progressbar(root, maximum = 100, length = 150, variable = p_var2)
+pvar = ttk.Progressbar(root, maximum = 100, length = 150, variable = p_var2)    # 최대값 100, 길이 150, variable = 변수
 pvar.pack()
 
 # def btnCmd1() : 
