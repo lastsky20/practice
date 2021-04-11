@@ -17,22 +17,68 @@
 # 9. 닫기 : 프로그램 종료
 
 import tkinter.ttk as ttk
-from tkinter import *
+import tkinter.messagebox as msgbox
+from tkinter import *  # __all__
+from tkinter import filedialog
+
 
 
 root = Tk()
 root.title("Image Merge")              # 타이틀(제목)
 # root.geometry("1024x768")       # 윈도우의 크기
 
+# 파일 추가
+def add_file() :
+    files = filedialog.askopenfilenames(title = "이미지 파일을 선택 하세요.", \
+        filetypes =(("PNG 파일", "*.png"), ("모든 파일", "*.*")), \
+        initialdir = r"C:\Users\PC\Desktop\PythonWork")    # r 을 사용할 경우 문자열을 로우스트링으로 사용(그대로 사용)
+
+    # 파일 목록을 출력
+    for file in files :
+        # print(file)
+        list_file.insert(END, file)
+
+    
+# 파일 목록 삭제
+def del_file() : 
+    # print(list_file.curselection())
+    for index in reversed(list_file.curselection()):    # reversed : 반환값을 역순으로 정렬, 원래 값에는 영향 없음.
+        list_file.delete(index)
+        
+
+# 저장 경로 선택(폴더)
+def browse_dest_path() :
+    folder_selected = filedialog.askdirectory()
+    if folder_selected is None: 
+        return
+    txt_dest_path.delete(0, END)
+    txt_dest_path.insert(0, folder_selected)
+
+# 시작
+def start():
+    print("가로넓이: ", cmd_width.get())
+    print("간격: ", cmd_space.get())
+    print("포멧: ", cmd_format.get())
+
+    # 파일 목록 확인
+    if list_file.size() == 0 :
+        msgbox.showwarning("경고", "이미지 파일을 추가 하세요")
+        return
+
+    # 저장 경로 확인
+    if len(txt_dest_path.get()) == 0 :
+        msgbox.showwarning("경고", "파일 저장 경로를 선택 하세요")
+        return
+
 
 # 파일 프레임(파일 추가, 선택삭제)
 file_frame = Frame(root)
 file_frame.pack(fill = "x", padx = 5, pady = 5)
 
-btn_add_file = Button(file_frame, text = "파일추가", padx = 5, pady = 5, width = 12)
+btn_add_file = Button(file_frame, text = "파일추가", padx = 5, pady = 5, width = 12, command = add_file)
 btn_add_file.pack(side = "left")
 
-btn_del_file = Button(file_frame, text = "선택삭제", padx = 5, pady = 5, width = 12)
+btn_del_file = Button(file_frame, text = "선택삭제", padx = 5, pady = 5, width = 12, command = del_file)
 btn_del_file.pack(side = "right")
 
 # list frame
@@ -55,7 +101,7 @@ path_frame.pack(fill = "x", padx = 5, pady = 5, ipady = 5)  # ipady : 프레임 
 txt_dest_path = Entry(path_frame)
 txt_dest_path.pack(side = "left", fill = "x", expand = True, padx = 5, pady = 5, ipady = 4)      # 높이 변경
 
-btn_dest_path = Button(path_frame, text = "찾아보기", width = 10)
+btn_dest_path = Button(path_frame, text = "찾아보기", width = 10, command = browse_dest_path)
 btn_dest_path.pack(side = "right", padx = 5, pady = 5)
 
 #옵션 프레임
@@ -106,7 +152,7 @@ frame_run.pack(fill = "x", padx = 5, pady = 5)
 btn_close = Button(frame_run, padx = 5, pady = 5, text = "닫기", width = 12, command = root.quit)
 btn_close.pack(side = "right", padx = 5, pady = 5)
 
-btn_start = Button(frame_run, padx = 5, pady = 5, text = "시작", width = 12)
+btn_start = Button(frame_run, padx = 5, pady = 5, text = "시작", width = 12, command = start)
 btn_start.pack(side = "right", padx = 5, pady = 5)
 
 
