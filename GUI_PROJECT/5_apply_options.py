@@ -1,20 +1,3 @@
-# 사용자 시나리오
-# 1. 합치려는 이미지를 1개 이상 선택
-# 2. 이미지가 저장될 경로를 지정한다.
-# 3. 가로넓이, 간격, 포멧 옵션을 지정한다.
-# 4. 시작 버튼을 통해 이미지를 합친다.
-# 5. 닫기 버튼을 통해 프로그램을 종료한다.
-
-# 기능명세
-# 1. 파일추가 : 리스트 박스에 파일 추가
-# 2. 선택삭제 : 리스트 박스에서 선택된 항목 삭제
-# 3. 찾아보기 : 저장 폴더를 선택하면 텍스트 위젯에 입력
-# 4. 가로넓이 : 이미지 넓이 지정(원본유지, 1024, 800, 640)
-# 5. 간격 : 이미지 간의 간격 지정(없음, 좁게, 보통, 넓게)
-# 6. 포맷 : 저장 이미지 포맷 지정(png, jpg, bmp)
-# 7. 시작 : 이미지 합치기 작업 실행
-# 8. 진행상황 : 현재 진행중인 파일 순서에 맞게 반영
-# 9. 닫기 : 프로그램 종료
 
 import os
 import tkinter.ttk as ttk
@@ -22,7 +5,6 @@ import tkinter.messagebox as msgbox
 from tkinter import *  # __all__
 from tkinter import filedialog
 from PIL import Image
-
 
 
 root = Tk()
@@ -51,7 +33,7 @@ def del_file() :
 # 저장 경로 선택(폴더)
 def browse_dest_path() :
     folder_selected = filedialog.askdirectory()
-    if folder_selected is None: 
+    if folder_selected == "": 
         return
     txt_dest_path.delete(0, END)
     txt_dest_path.insert(0, folder_selected)
@@ -59,45 +41,109 @@ def browse_dest_path() :
 
 # 이미지 합치기
 def merge_image():
-    # print(list_file.get(0, END))
-    images = [Image.open(x) for x in list_file.get(0, END)]
 
-    # images = list()
-    # for x in list_file.get(0, END):
-    #     images.append(Image.open(x))
+    # print("가로넓이: ", cmd_width.get())
+    # print("간격: ", cmd_space.get())
+    # print("포멧: ", cmd_format.get())
 
-    # size -> size[0] => width / size[1] => heights
+    ############### 사용자 입력값 처리 #################
+    # 가로넓이
+    try:
+        img_width = cmd_width.get()
+        if img_width == "원본유지":
+            img_width = -1   # -1 일 때에는 원본 기준으로
+        else : 
+            img_width = int(img_width)
 
-    # widths = [x.size[0] for x in images]
-    # heights = [x.size[1] for x in images]
+        # 간격
+        img_space = cmd_space.get()
+        if img_space == "좁게" :
+            img_space = 30
+        elif img_space == "보통" :
+            img_space = 60
+        elif img_space == "넓게" :
+            img_space = 90
+        else : 
+            img_space = 0
 
-    widths, heights = zip(*(x.size for x in images))
+        # 포멧
+        img_format = cmd_format.get().lower()
 
-    print("widths : ", widths)
-    print("heights : ", heights)
-    max_widths, total_heights = max(widths), sum(heights)
-    print("max_widths : ", max_widths)
-    print("total_heights : ", total_heights)
-
-    result_img = Image.new("RGB", (max_widths, total_heights), (255,255,255)) # 바탕 흰색
-    y_offset = 0  # y 위치
-    
-    # for img in images:
-    #     result_img.paste(img, (0, y_offset))
-    #     y_offset += img.size[1]  # 높이값 더해줌
-
-    for idx, img in enumerate(images) :
-        result_img.paste(img, (0, y_offset))
-        y_offset += img.size[1]
-
-        progress = (idx + 1) / len(images) * 100
-        p_var.set(progress)
-        progress_bar.update()
+        images = [Image.open(x) for x in list_file.get(0, END)]
 
 
-    dest_path = os.path.join(txt_dest_path.get(), "join.jpg")
-    result_img.save(dest_path)
-    msgbox.showinfo("알림", "작업이 완료 되었습니다.")
+        # 계산식
+        # 100 * 60 의 이미지가 있음 -> width 를 줄이면 height 는?
+        # (원본 width) : (원본 height) = (변경 width) : (변경 height)
+        #     100             60             80             ?
+        #      x               y             x'             y'
+        #      xy' = x'y
+        #      y' = x'y / x
+        #      y' = 80 * 60 / 100 = 4800 / 100 = 48
+
+        image_sizes = []
+        if img_width > -1 :
+            # 사이즈 변경
+            image_sizes = [(int(img_width), int(img_width * x.size[1] / x.size[0])) for x in images]
+            
+        else :
+            # 원본 사이즈 사용
+            image_sizes = [(x.size[0], x.size[1]) for x in images]
+
+        ############### 사용자 입력값 처리 끝 ###############
+
+
+        # print(list_file.get(0, END))
+
+
+        # images = list()
+        # for x in list_file.get(0, END):
+        #     images.append(Image.open(x))
+
+        # size -> size[0] => width / size[1] => heights
+
+
+        # widths = [x.size[0] for x in images]
+        # heights = [x.size[1] for x in images]
+
+        widths, heights = zip(*(image_sizes))
+
+        print("widths : ", widths)
+        print("heights : ", heights)
+        max_widths, total_heights = max(widths), sum(heights)
+        print("max_widths : ", max_widths)
+        print("total_heights : ", total_heights)
+
+        # 스케치북 준비
+        if img_space > 0 :  # 이미지 간격 옵션 적용
+            total_heights += (img_space * (len(images) - 1))
+
+        result_img = Image.new("RGB", (max_widths, total_heights), (255,255,255)) # 바탕 흰색
+        y_offset = 0  # y 위치
+        
+        # for img in images:
+        #     result_img.paste(img, (0, y_offset))
+        #     y_offset += img.size[1]  # 높이값 더해줌
+
+        for idx, img in enumerate(images) :
+            if img_width > -1 : 
+                img = img.resize(image_sizes[idx])
+            
+            result_img.paste(img, (0, y_offset))
+            y_offset += (img.size[1] + img_space)  # height 값, 사용자가 지정한 간격 조정
+
+            progress = (idx + 1) / len(images) * 100
+            p_var.set(progress)
+            progress_bar.update()
+
+
+        # 포멧 옵션 처리
+        file_name = "join_result." + img_format
+        dest_path = os.path.join(txt_dest_path.get(), file_name)
+        result_img.save(dest_path)
+        msgbox.showinfo("알림", "작업이 완료 되었습니다.")
+    except Exception as err: # 예외처리
+        msgbox.showerror("에러", err)
 
 
 # 시작
@@ -202,13 +248,6 @@ btn_close.pack(side = "right", padx = 5, pady = 5)
 
 btn_start = Button(frame_run, padx = 5, pady = 5, text = "시작", width = 12, command = start)
 btn_start.pack(side = "right", padx = 5, pady = 5)
-
-
-
-
-
-
-
 
 root.resizable(False, False)     # 버튼의 크기 조절, x값과 y값을 true, false 로 지정하여 허용여부 지정
 root.mainloop()
