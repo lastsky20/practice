@@ -9,7 +9,7 @@ from PIL import Image
 
 root = Tk()
 root.title("Image Merge")              # 타이틀(제목)
-# root.geometry("1024x768")       # 윈도우의 크기
+
 
 # 파일 추가
 def add_file() :
@@ -29,7 +29,6 @@ def del_file() :
     for index in reversed(list_file.curselection()):    # reversed : 반환값을 역순으로 정렬, 원래 값에는 영향 없음.
         list_file.delete(index)
         
-
 # 저장 경로 선택(폴더)
 def browse_dest_path() :
     folder_selected = filedialog.askdirectory()
@@ -37,7 +36,6 @@ def browse_dest_path() :
         return
     txt_dest_path.delete(0, END)
     txt_dest_path.insert(0, folder_selected)
-
 
 # 이미지 합치기
 def merge_image():

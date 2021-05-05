@@ -11,4 +11,4 @@ def screenshot():
 
 keyboard.add_hotkey("F9", screenshot)
 
-keyboard.wait("esc")
+keyboard.wait("esc", quit)
