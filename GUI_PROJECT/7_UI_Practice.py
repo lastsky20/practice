@@ -1,16 +1,53 @@
+import os
 import tkinter.ttk as ttk
+import tkinter.messagebox as msgbox
 from tkinter import *
+from tkinter import filedialog
 
 
 root = Tk()
 root.title("Image Merge")
 
+# 파일 프레임 - 파일 추가
+def add_file():
+    files = filedialog.askopenfilenames(title = "이미지 파일을 선택 하세요", \
+        filetypes = (("PNG 파일", "*.png"), ("모든 파일", "*.*")), \
+        initialdir = r"C:\Users\PC\Desktop\PythonWork")
+    
+    for file in files :
+        listbox_filelist.insert(END, file)
+
+# 파일 프레임 - 파일 삭제
+def del_file():
+    for index in reversed(listbox_filelist.curselection()) :
+        listbox_filelist.delete(index)
+
+# 저장경로 프레임 - 경로 선택
+def browse_dest_path() :
+    folder_selected = filedialog.askdirectory()
+    if folder_selected == "":
+        return
+    entry_destpath.delete(0, END)
+    entry_destpath.insert(0, folder_selected)
+
+def start():
+    
+    if listbox_filelist.size() == 0 :
+        msgbox.showwarning("경고", "이미지 파일을 추가 하세요")
+        return
+
+    if len(entry_destpath.get()) == 0 : 
+        msgbox.showwarning("경고", "파일 저장 경로를 확인 하세요")
+        return
+
+
+
 # 파일 프레임
 frame_file = Frame(root)
 frame_file.pack(fill = "x", padx = 5, pady = 5)
-btn_addfile = Button(frame_file, text = "파일추가", padx = 5, pady = 5, width = 12)
+btn_addfile = Button(frame_file, text = "파일추가", padx = 5, pady = 5, width = 12, command = add_file)
 btn_addfile.pack(side = "left")
-btn_deletefile = Button(frame_file, text = "선택삭제", padx = 5, pady = 5, width = 12)
+btn_deletefile = Button(frame_file, text = "선택삭제", padx = 5, pady = 5, width = 12, command = del_file)
 btn_deletefile.pack(side = "right")
 
 # 리스트 프레임
@@ -23,6 +60,8 @@ scrollbar_filelist.pack(side = "right", fill = "y")
 listbox_filelist = Listbox(frame_list, selectmode = "extended", height = 15, yscrollcommand = scrollbar_filelist.set)
 listbox_filelist.pack(side = "left", fill = "both", expand = True)
 
+scrollbar_filelist.config(command = listbox_filelist.yview)
+
 # 저장경로 프레임
 frame_path = LabelFrame(root, text = "저장경로")
 frame_path.pack(fill = "x", padx = 5, pady = 5, ipady = 5)
@@ -30,7 +69,7 @@ frame_path.pack(fill = "x", padx = 5, pady = 5, ipady = 5)
 entry_destpath = Entry(frame_path)
 entry_destpath.pack(side = "left", fill = "x", expand = True, padx = 5, pady = 5, ipady = 4)
 
-btn_destpath = Button(frame_path, text = "찾아보기", width = 10)
+btn_destpath = Button(frame_path, text = "찾아보기", width = 10, command = browse_dest_path)
 btn_destpath.pack(side = "right", padx = 5, pady = 5)
 
 # 옵션 프레임
@@ -76,10 +115,10 @@ progress_bar.pack(fill = "x", padx = 5, pady = 5)
 frame_run = Frame(root)
 frame_run.pack(fill = "x", padx = 5, pady = 5)
 
-btn_close = Button(frame_run, padx = 5, pady = 5, text = "닫기", width = 12)
+btn_close = Button(frame_run, padx = 5, pady = 5, text = "닫기", width = 12, command = root.quit)
 btn_close.pack(side = "right", padx = 5, pady = 5)
 
-btn_start = Button(frame_run, padx = 5, pady = 5, text = "시작", width = 12)
+btn_start = Button(frame_run, padx = 5, pady = 5, text = "시작", width = 12, command = start)
 btn_start.pack(side = "left", padx = 5, pady = 5)
 
 root.resizable(False, False)

@@ -4,15 +4,21 @@ root = Tk()
 root.title("GUI_Practice")
 root.geometry("640x480")
 
-listbox = Listbox(root, selectmode = "extended", height = 0)
-listbox.insert(END, "Apple")
-listbox.insert(END, "Orange")
-listbox.insert(END, "Banana")
-listbox.insert(END, "Kiwi")
-listbox.insert(END, "WaterMelon")
+# listbox = Listbox(root, selectmode = "extended", height = 0)
+# listbox.insert(END, "Apple")
+# listbox.insert(END, "Orange")
+# listbox.insert(END, "Banana")
+# listbox.insert(END, "Kiwi")
+# listbox.insert(END, "WaterMelon")
+# listbox.pack()
+
+
+opt_list = ["Apple", "Orange", "Banana", "Kiwi", "WaterMelon"]
+listbox = Listbox(root, selectmode = "extended", height = 0, cursor = "top_left_corner")
+
+for opt in opt_list : 
+    listbox.insert(END, opt)
 listbox.pack()
-
-
 
 
 def btnCmd1() : 
