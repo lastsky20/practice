@@ -1,0 +1,15 @@
+/학교/학년/반/학생[2]  # 전체 경로
+//*[@학번 = "1-1-5"]  # 학번이 "1-1-5" 속성을 가진 개체를 찾음
+
+
+/html/body/div/div/div/div.../span..    # 전체 경로
+//*[@id = "login"]  # id 가 "login" 속성을 가진 개체를 찾음
+
+
+# 네이버 예제
+
+/html/body/div[3]/div[2]/div/div[1]/section[1]/div/div[2]/div[1]/div[1]/h3      #full path
+//*[@id="main_pack"]/section[1]/div/div[2]/div[1]/div[1]/h3     #xpath
+
+/html/body/div[3]/div[1]/div/div[2]/div[1]/div/ul/li[1]/a       #full path
+//*[@id="lnb"]/div[1]/div/ul/li[1]/a        #xpath
