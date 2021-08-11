@@ -10,6 +10,7 @@ res3.raise_for_status()
 
 print("응답코드 :", res.status_code)
 print("응답코드 :", res2.status_code)
+print("응답코드 :", res3.status_code)
 
 # if res.status_code == requests.codes.ok:
 #     print("Ok")
