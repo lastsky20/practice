@@ -7,8 +7,8 @@ headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit
 
 for i in range(1, 6) : 
     url = "https://www.coupang.com/np/search?q=%EB%85%B8%ED%8A%B8%EB%B6%81&channel=user&component=&eventCategory=SRP&trcid=&traid=&sorter=scoreDesc&minPrice=&maxPrice=&priceRange=&filterType=&listSize=36&filter=&isPriceRange=false&brand=&offerCondition=&rating=0&page={0}&rocketAll=false&searchIndexingToken=1=4&backgroundColor=".format(i)
-    res = requests.get(url, headers = headers)
-    res.raise_for_status()
+    res = requests.get(url, headers = headers)      # request
+    res.raise_for_status()      # 예외처리
 
     print("응답코드", res.status_code)
 
