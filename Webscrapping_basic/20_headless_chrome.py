@@ -3,14 +3,24 @@ import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
+##################################################
+## headless 크롬(백그라운드) 을 사용하기 위한 옵션
+options = webdriver.ChromeOptions()
+options.headless = True
+## user agent 정보를 할당
+options.add_argument("user-agent = Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36")
+# 실행 pc 의 디스플레이 해상도 정보
+# options.add_argument("window-size = 1024x1080")
+##################################################
+
 
 url = "https://play.google.com/store/movies/top"
-headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
-            "Accept-Language" : "ko-KR,ko"}
+# headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
+#             "Accept-Language" : "ko-KR,ko"}
 
 
 
-browser = webdriver.Chrome("C:/Users/PC/Desktop/PythonWork/chromedriver_win32/chromedriver.exe")
+browser = webdriver.Chrome("C:/Users/PC/Desktop/PythonWork/chromedriver_win32/chromedriver.exe", options = options)
 browser.maximize_window()
 browser.get(url)
 
@@ -22,19 +32,15 @@ browser.get(url)
 # browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
 interval = 2
-## 브라우저의 높이 값 "scrollHeight" 을 가져옴
 prev_height = browser.execute_script("return document.body.scrollHeight")
 
 while True:
-    ## 브라우저의 스크롤을 현재 브라우저의 높이만큼 내림
     browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
     time.sleep(interval)
-    
-    ## 스크롤을 내린 후 현재 높이값을 다시 가져옴
+
     curr_height = browser.execute_script("return document.body.scrollHeight")
-    
-    # 현재 스크롤 높이와 이전 스크롤 높이의 값이 같을 때 까지 반복
+
     if prev_height == curr_height :
         break
 
@@ -42,9 +48,6 @@ while True:
 
 print("스크롤 내리기 종료")
 
-
-# res = requests.get(url, headers = headers)
-# res.raise_for_status()
 
 # 현재 실행되어 있는 브라우저의 페이지 소스를 가져옴
 soup = BeautifulSoup(browser.page_source, "lxml")
@@ -80,4 +83,5 @@ for movie in movies :
     print("링크 :" "https://play.google.com" + link)
     print("-" * 50)
 
+browser.get_screenshot_as_file("googleMovie.png")
 browser.quit()

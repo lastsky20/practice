@@ -18,6 +18,7 @@ soup = BeautifulSoup(res.text, "lxml")      # pip install lxml
 # print(soup.a["href"])       # "a" 엘리먼트의 "href" 속성값 출력
 # print(soup.find("a", attrs = {"class":"Nbtn_upload"}))        # 속성값 "class : Nbtn_upload" 정보 출력 "a" 엘리먼트를 찾아서 출력 
 # print(soup.find(attrs = {"class" : "Nbtn_upload"} ))        # "class" "Nbtn_upload" 속성값을 찾아서 출력
+# print(sout.prettify())    # html 문서를 정리해서 보여줌.
 
 rank = soup.find("li", attrs={"class" : "rank01"})      # "li" 로 시작하는 "class" 가 "rank01" 인 줄을 탐색
 print(rank.a.get_text())
