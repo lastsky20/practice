@@ -12,3 +12,4 @@ for idx, image in enumerate(images) :
     # image = image3
     # image = image4
     # image = image5
+    print(idx)

@@ -35,7 +35,7 @@ browser.get(url)
 
 d_value = browser.find_element_by_id("detected_value")
 
-print(d_value.text)
+print(d_value)
 
 quit()
 
