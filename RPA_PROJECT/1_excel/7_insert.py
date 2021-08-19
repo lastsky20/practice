@@ -10,9 +10,10 @@ from random import *
 wb = load_workbook("sample2.xlsx")
 ws = wb.active
 
-## row 를 순회하며 값을 찾기
-for row in ws.iter_rows(max_row = 2):
-    for cell in row :
-        print(cell.value)
-        if cell.value == "영어" :
-            print("찾음 :", cell.value)
+# ws.insert_rows(8, 5) # 8번째 줄부터 5번의 삽입
+# ws.insert_cols(2, 5) # B번째 열부터 5번의 삽입
+# ws.insert_cols(2) # B번째 열이 삽입됨
+
+
+
+wb.save("sample2.xlsx")
