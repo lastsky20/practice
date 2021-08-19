@@ -14,16 +14,16 @@ ws["B2"] = 5
 ws["B3"] = 6
 
 
-# 직접 접근
+## 셀에 직접 접근
 print(ws["A1"]) # 셀의 정보를 출력
 print(ws["A1"].value)   # 셀의 값을 출력
 print(ws["A10"].value)  # 값이 없을땐 none 출력
 
-# 셀의 column, row 값으로 접근
+## 셀의 column, row 값으로 접근
 print(ws.cell(column = 1, row = 1).value)
 print(ws.cell(column = 2, row = 1).value)
 
-# value 값을 지정하여 데이터 입력
+## value 값을 지정하여 데이터 입력
 w = ws.cell(column = 3, row = 1, value = 10)    # column, row 값을 지정하여 값 출력 == ws["C1"] = 10
 print(ws.cell(column = 3, row = 1).value)   
 print(w.value)  # 변수를 지정하여 값 출력 == w["C1"].value
@@ -36,5 +36,5 @@ for x in range(1, 11) :
         ws.cell(row = x, column = y, value = i)
         i += 1
 
-
+## 워크시트 저장
 wb.save("TestBook.xlsx")
