@@ -1,8 +1,10 @@
+from openpyxl.styles import Font, Border, Side
 from openpyxl import Workbook
 from openpyxl import load_workbook
 from openpyxl.utils.cell import coordinate_from_string  ## 좌표 정보를 가져오기 위한 모듈
 
-from random import *
+from random import *    
+## 새로운 워크북을 생성
 wb = Workbook()
 ws = wb.active
 
@@ -20,6 +22,7 @@ col_B = ws["B"] # B 컬럼의 값만 가져오기
 
 ## 여러 컬럼의 데이터 가져오기
 col_range = ws["B:C"]   # B, C 컬럼의 데이터 가져오기
+
 # print(col_range)
 
 # for cols in col_range :   # 컬럼의 데이터(튜플) 만 가져옴
@@ -35,11 +38,11 @@ col_range = ws["B:C"]   # B, C 컬럼의 데이터 가져오기
 
 
 ## 여러 row 데이터 가져오기
-# title = ws[1:ws.max_row]    # 1번째 row 부터 끝까지
-# for names in title :
-#     for name in names :
-#         print(name.value, end = " " )
-#     print()
+title = ws[1:ws.max_row]    # 1번째 row 부터 끝까지
+for names in title :
+    for name in names :
+        print(name.value, end = " " )
+    print()
 
 ## 여러 row 데이터의 좌료값 가져오기
 # title = ws[1:ws.max_row]    # 1번째 row 부터 끝까지

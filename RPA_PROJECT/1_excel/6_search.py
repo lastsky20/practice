@@ -11,7 +11,7 @@ wb = load_workbook("sample2.xlsx")
 ws = wb.active
 
 ## row 를 순회하며 값을 찾기
-for row in ws.iter_rows(max_row = 2):
+for row in ws.iter_rows(max_row = 5): # 첫번째 열의 값만 찾음ㄴ
     for cell in row :
         print(cell.value)
         if cell.value == "영어" :
