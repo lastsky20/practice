@@ -39,13 +39,14 @@ scores = [
     (10,9,8,8,20,25,20)
 ]
 
+
+## 데이터 입력 부분
 # i = 1
 # j = 1
 # for name in title :
 #     # print(i)
 #     # ws.append(j, )
 #     if name == "줄바꿈" :
-#         print("w")
 #         j = j + 1
 #         i = 1
 #         continue
@@ -53,12 +54,11 @@ scores = [
 #     i = i + 1
 
 ## 퀴즈 풀이 부분
-
 # 퀴즈2 칼럼의 데이터를 모두 10으로 수정
 for i in range(2, 12) :
     ws.cell(column=4, row=i, value = 10)
 
-# 총점 계산 부분
+## 총점 계산
 ws["H1"] ="총점"
 total = 0
 for i in range(2, 12) :
@@ -68,7 +68,7 @@ for i in range(2, 12) :
     total = 0
 
 
-# 성적 계산 부분
+## 성적 계산
 ws["I1"] ="성적"
 for i in range(2, 12) :
         if ws.cell(column=2, row=i).value < 5 :

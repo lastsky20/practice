@@ -48,7 +48,7 @@ print(rank.a.get_text())
 # print(all_next)
 
 
-webtoon = soup.find("a", text = "노답소녀-40화")     # "조조코믹스-내일의 조 8회" 테스트를 가진 "a" 태그를 찾음
+webtoon = soup.find("a", text = "노답소녀-40화")     # "노답소녀-40화" 텍스트를 가진 "a" 태그를 찾음
 print(webtoon)
 
 

@@ -13,3 +13,7 @@ for idx, image in enumerate(images) :
     # image = image4
     # image = image5
     print(idx)
+
+## 인덱스가 2 부터 시작 : "start"
+for idx, image in enumerate(image, start = 2) :
+    print(idx) 
