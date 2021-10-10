@@ -8,6 +8,7 @@ ws = wb.active
 
 ## 셀 병합하기
 ws.merge_cells("B2:D2")
+ws.merge_cells("B3:D3", "B4:D4")
 ws["B2"].value = "Merged Cell"
 # 셀 병합후 센터 정렬
 ws["B2"].alignment = Alignment(horizontal="center", vertical="center")
