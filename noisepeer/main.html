@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Noisepeer</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+
+        <style>
+            .nav {
+                height: 70px;
+                border-bottom: 1px solid black;
+                display: flex;
+                align-items: center; 
+            }
+            .nav-right-items {
+                display: flex;
+                margin-left: auto;
+            }
+            .nav-item {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .company-name {
+                margin-left: 20px;
+            }
+
+            .title  {
+                text-align: center;
+                font-size: 3.5rem;
+                font-weight: bold;
+            }
+
+            .subtitle {
+                text-align: center;
+                font-size: 1.25rem;
+                font-weight: 300;
+            }
+
+            .main {
+                width: 800;
+                margin: 0 auto;
+                margin-top: 60px;
+            }
+
+
+            .prices {
+                display: flex;
+            }
+            .price-item {
+                width: 300px;
+                height: 300px;
+                border: 1px solid black;
+                margin: 20px;
+                border-radius: 4px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="company-name">  
+                NoisePeer
+            </div>
+            <div class="nav-right-items">   
+                <div class="nav-item">menu1</div>
+                <div class="nav-item">menu2</div>
+                <div class="nav-item">menu3</div>
+                <div class="nav-item">menu4</div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="title">Pricing
+            </div>
+            <div class="subtitle">
+                Noise exists everywhere, and will continue to exist
+            </div>
+            <div class="prices">
+                <div class="price-item">
+                    price1
+                </div>
+                <div class="price-item">
+                    price2
+                </div>
+                <div class="price-item">
+                    price3
+                </div>
+            </div>
+        </div>
+
+        
+    
+    </body>
+</html>
+
+
+
+
+
+<!-- # GET 방식 : 어떠한 정보를 URL 을 통해 제공
+# ex) https://www.coupang.com/np/search?minPrice=1000&maxPrice=100000&page=1
+# ?변수&값
+# 데이터양의 제한 있음
+
+# POST 방식 : HTTP Body 에 정보를 숨겨서 제공
+# 보안 데이터 방식
+# 데이터양의 제한 없음, 업로드, 게시글 작성 등 
+# 
+
+
+# 각 서비스 제공자 서버에서 robots.txt 파일을 제공(ex: www.google.com/robots.txt)
+# 해당 서버에서 데이터 allow/disallow 등을 명시(사이트 권고사항)
+
+# <div class="box">박스</div>    / "div 는 태그, class 는 속성"  
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+1. css는 html 엘레먼트의 스타일링을 하기 위해 사용
+2. .box 는 class="box" 속성을 가진 엘레먼트를 스타일하고 싶다고 명시하는 것
+3. width, height, border 같은 규칙을 써서 엘레먼트의 모양 및 위치를 바꿈
+
+
+-->

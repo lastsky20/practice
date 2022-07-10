@@ -69,7 +69,7 @@ import datetime
 # ## 지정 경로에서 파일 찾기
 # fname = "5_screen.py"
 # result3 = []
-# for root, dirs, files in os.walk(".") :
+# for root, dirs, files in os.walk(".") :       # "." : 현재폴더 / 
 #     if fname in files : 
 #         result3.append(os.path.join(root, fname))
 #         print(result3)
@@ -85,17 +85,73 @@ import datetime
 ## 특정 패턴의 파일 찾기
 import fnmatch
 
-pattern = "*.png"    # 패턴 정의
+pattern = "*.png"    # 패턴 정의, wild card mask
 result = []
 
-for root, dirs, files in os.walk(os.getcwd()) :
+for root, dirs, files in os.walk(os.getcwd()) :     #"os.walk" : 부모폴더, 자식폴더, 파일
     for name in files :
-        if fnmatch.fnmatch(name, pattern) :
-            result.append(os.path.join(root, name))
+        if fnmatch.fnmatch(name, pattern) :     # 두개의 인수를 비교
+            result.append(os.path.join(root, name))     # 전체경로 + 파일명
 
 print(result)
 for r in result :
     print(r)
+
+# 주어진 경로의 파일/폴더 비교 -> 리턴 값 TRUE 또는 FALSE / 경로가 없으면 FALSE
+print(os.path.isdir("rpa_basic"))      # 해당 경로가 폴더인가
+print(os.path.isfile("rpa_basic"))     # 해당 경로가 파일인가
+
+
+# 주어진 경로가 존재유무
+if os.path.exists("rpa_basic") : # 파일 또는 폴더의 존재유무
+    print("파일 또는 폴더가 존재")
+else :
+    print("파일 또는 폴더가 존재하지 않음")
+
+# 파일 만들기
+open("new_text.txt").close()    # 빈 파일 생성
+
+# 파일명 변경
+os.rename("new_text.txt", "new_file_text.txt")      # 파일명 변경
+
+# 파일 삭제
+os.remove("new_file_text.txt")
+
+# 폴더 생성
+os.mkdir("new_fd")      # 폴더 생성, 현재 경로
+os.mkdir("c:/")     # 절대 경로
+
+os.makedirs("new_folders/a/b/c")       # 하위 폴더를 가지는 경로 생성
+
+# 폴더명 변경
+os.rename("new_folder", "new_folders")
+
+# 폴더 삭제
+os.rmdir("new_folders")     # 폴더 안에 비어 있을 때
+
+import shutil   # 쉘 유틸
+# 모든 하위 폴더 삭제
+shutil.rmtree("new_folders")        # ※주의※ 폴더 안에 파일, 폴더 강제 삭제(모든 파일 삭제)
+
+# 파일 복사
+shutil.copy("run.png", "test_folder")   # 원본대상 / 대상 폴더
+
+shutil.copy("run.png", "test_folder/copy_run.png")  # 원본대상 / 대상 폴더 및 파일명
+
+shutil.copyfile("run.png", "test_folder/copy_run2.png")     # 원본대상 / 대상 파일 경로(only)
+
+shutil.copy2("run.png", "test_folder/copy2.png")    # 원본대상 / 대상 폴더(파일) 경로
+
+## copy, copyfile : 메타정보 복사 x, 복사시 파일의 메타정보가 새로 생성(날짜, 시간 등)
+## copy2 : 메타정보 복사 o, 복사시 기존 파일의 메타정보가 그대로 복사(날짜, 시간 등)
+
+# 폴더 복사
+shutil.copytree("test_folder", "test_folder2")     # 원본 폴더 경로, 대상 폴더 경로
+
+# 폴더 이동
+shutil.move("test_folder", "test_folder3")  # 원본 폴더 경로, 대상(부모) 폴더 경로
+shutil.move("test_folder", "test_folder5")  # 대상 폴더가 없을시 rename 생성
+
 
 
 
