@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>  
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>htmlPractice1</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- 기본 선택자 -->
+    <style>
+      p {
+            background-color: yellow;
+        }
+      #id1 {
+        color: yellow;
+        background-color: black;
+      }
+      .class1 {
+        color: blue;
+        background-color: yellow;
+      }
+      p.class1 {
+        color: red;
+        background-color: navy;
+      }
+      h1 {
+        color: green;
+      }
+      h1[text] {
+        color: purple;
+      }
+      input[type="password"] {
+        background: yellow;
+      }
+    </style>
+</head>
+
+<body>  
+    <p>p</p>
+    <p id="id1">id1인 p</p>
+    <p class="class1">class1인 p</p>
+    <p class="class2">class2인 p</p>
+    <h1>h1</h1>
+    <h1 text="h1_text">text 속성 h1</h1>
+    <form>
+      <input type="password">
+    </form>
+</body>

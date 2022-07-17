@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>  
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>htmlPractice4</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- 상태 선택자 -->
+    <!-- 
+    :enabled	사용 가능한 form 관련 태그 선택
+    :disabled	사용 불가능한 form 관련 태그 선택
+    :checked	현재 선택된 form 관련 태그
+    :focus	현재 초점이 맞추어진 form 관련 태그 선택 
+    -->
+
+    <style>
+        input:enabled { background-color: skyblue; }
+        input:disabled { background-color: darkgray; }
+        input:focus { background-color: yellow; }
+        
+    </style>
+
+    <!-- 기타 선택자 -->
+    <!--
+    E:lang(ko)	lang 속성 값이 ko 인 태그 선택
+    E:not(S)	S가 아닌 E 태그 선택
+    E:target	E의 url 요청 시 선택
+    E::first-line	E 태그의 첫번째 줄 선택
+    E::first-letter	E 태그의 첫번째 문자 선택
+    E::before	E 태그의 시작 지점 태그 선택
+    E::after	E 태그의 끝 지점 태그 선택
+    -->
+
+    <style>
+        /* 텍스트 관련 태그는 콜론을 두개씩 */
+        div::first-letter { font-size: 30px; }
+        div::first-line { color: royalblue; }
+        div::selection { background: yellow; color: red; }
+    </style>
+
+</head>
+
+<body>  
+    <input>
+    <input disabled="disabled"/>
+    <input>
+
+    <div>이수안 컴퓨터 연구소<br />
+        SuanLab<br />
+        이수안 컴퓨터 연구소
+    </div>
+</body>

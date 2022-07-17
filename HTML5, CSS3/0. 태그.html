@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>htmlPractice</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+
+        <div class="item">Hello</div>
+        <h1>Hello,<br /> worlds</h1> <!-- 줄바꿈 태그 br -->
+        <h2>Hello</h2>
+        <h3>Hello</h3>
+        <h4>Hello</h4>
+        <h5>Hello</h5>
+        <h6>Hello</h6>
+
+        <!-- 명시적인 강조 태그(시야 강조) bold, i -->
+        <b>Hello bold</b><br />
+        <!-- 의미론적 강조 태그(내부적 강조, 검색엔진 등) strong, em -->
+        <strong>Hello Strong<br /></strong>
+        <!-- 명시적인 강조 태그(시야 강조) bold, i -->
+        <i>Hello italic</i><br />
+        <!-- 의미론적 강조 태그(내부적 강조, 검색엔진 등) strong, em -->
+        <em>Hello EM</em>
+        <p>Hellp p</p> <!-- 하나의 문단을 생성 -->
+        <ins>hello int<br /></ins> <!-- 밑줄 -->
+        <del>Hello Del<br /></del> <!-- 취소선 -->
+
+
+
+        <!-- <img src="../img.png"> -->
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls /></video>
+        
+        <!--현재 창에서 링크로 이동-->
+        <a href="https://google.com">google</a> 
+        
+        <!--새로운 창에서 링크로 이동-->
+        <a href="https://google.com" target="_blank">google</a> 
+
+
+        <!-- 테이블 태그 -->
+        <table border="1"> 
+            <!-- 칼럼 -->
+            <thead> 
+                <th>name</th>
+                <th>age</th>
+            </thead>
+            <!-- 내용 -->
+            <tbody> 
+                <tr>
+                    <td>mike</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>brown</td>
+                    <td>41</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 리스트(목록) 태그-->
+        <!-- 번호(ordered list) -->
+        <ol>    
+            <li>mike</li>
+            <li>brown</li>
+        </ol>
+        <!-- 블랙 포인트(unordered list)-->
+        <ul>    
+            <li>mike</li>
+            <li>brown</li>
+        </ul>
+
+        <!-- 구역을 나누는 태그(한줄 전체, block element) -->
+        <div class="top">top</div>
+        <div class="middle">middle</div>
+        <div class="bottom">bottom</div>
+
+        <!-- 구역을 나누는 태그(자기 내용 만큼만, inline element) -->
+        <span class="like">like</span>
+        <span class="sub">sub</span>
+        <span class="comment">comment</span>
+
+        <!-- 입력 관련 태그 -->
+        Text<input type="text" />
+        CheckBox<input type="checkbox" />
+        Radio <input type="radio" />
+        Color <input type="color" />
+        여러 문장 <textarea></textarea>
+        Dropdown <select name="name">
+            <option value="Jen">Jen</option>
+            <option value="won">won</option>
+        </select>
+
+        <form>
+            <input type="email" placeholder="이메일" />
+            <input type="password" placeholder="비밀번호" />
+            <button type="submit">Login</button>
+        </form>
+
+    </body>
+</html>

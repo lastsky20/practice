@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>  
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>htmlPractice3</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- 구조 선택자 -->
+    <style>
+      /* "n" : 파라미터
+        E:root	최상위 태그 선택
+        E:nth-child(n)	순서와 일치하는 E 태그 선택(순서에 다른 태그 포함)
+        E:nth-last-child(n)	뒤에서부터 순서와 일치하는 E태그 선택(순서에 다른 태그 포함)
+        E:nth-of-type(n)	순서가 일치하는 E 태그 선택(순서에 E 태그만 포함)
+        E:nth-last-of-type(n)	뒤에서부터 순서와 일치하는 E 태그 선택(순서에 E 태그만 포함)
+        E:first-child	맨 첫번째 태그가 E 태그인 경우 선택(순서에 다른 태그 포함)
+        E:last-child	맨 뒤의 태그가 E 태그인 경우 선택(순서에 다른 태그 포함)
+        E:first-of-type	E 태그 중 첫번째 선택
+        E:last-of-type	E 태그 중 마지막번째 선택
+        E:only-child	유일한 자식인 E 태그 선택
+        E:only-of-type	유일한 타입의 E 태그 선택
+        E:empty	텍스트와 공백을 포함하여 자식요소가 없는 E 태그 선택
+      */
+        p { background-color: lightsteelblue; }
+        p:nth-child(1) { font-size: 400%; }
+        p:nth-child(2) { font-size: 350%; }
+        p:nth-child(3) { font-size: 300%; }
+        p:nth-child(4) { font-size: 250%; }
+        p:nth-child(5) { font-size: 200%; }
+        p:nth-child(6) { font-size: 150%; }
+        p:nth-child(7) { font-size: 100%; }
+
+        th:first-child { border-radius: 10px 0 0 0; }
+        th:last-child { border-radius: 0 10px 0 0; }
+        tr:nth-child(2n) { background-color: skyblue; }
+        tr:nth-child(2n+1) { background-color:lightblue; }
+        td:hover { background-color: royalblue; }
+    </style>
+</head>
+
+<body>  
+    <p>Suan</p>
+    <p>Suan</p>
+    <p>Suan</p>
+    <p>Suan</p>
+    <p>Suan</p>
+    <p>Suan</p>
+    <p>Suan</p>
+
+    <table>
+        <tr>
+            <th>Head</th>
+            <th>Head</th>
+            <th>Head</th>
+        </tr>
+        <tr>
+            <td>Body</td>
+            <td>Body</td>
+            <td>Body</td>
+        </tr>
+        <tr>
+            <td>Body</td>
+            <td>Body</td>
+            <td>Body</td>
+        </tr>
+        <tr>
+            <td>Body</td>
+            <td>Body</td>
+            <td>Body</td>
+        </tr>
+    </table>
+
+</body>
