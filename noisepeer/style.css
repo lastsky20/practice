@@ -1,0 +1,37 @@
+
+.item {
+    color: red;
+}
+
+.top {
+    background-color: red;
+    height: 80px;
+    text-align: center;
+
+    
+}
+
+.middle {
+    background-color: blue;
+    height: 80px;
+
+}
+
+.bottom {
+    background-color: yellow;
+    height: 80px;
+
+}
+
+.like   {
+    background-color: red;
+    
+}
+
+.sub   {
+    background-color: blue;
+}
+
+.comment   {
+    background-color: yellow;
+}

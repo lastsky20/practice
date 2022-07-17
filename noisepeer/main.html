@@ -6,6 +6,11 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
 
         <style>
+            .company-name {
+                font-size: 2.5rem;
+                font-weight: bold;
+                align-self: center;
+            }
             .nav {
                 height: 70px;
                 border-bottom: 1px solid black;
@@ -49,9 +54,71 @@
             .price-item {
                 width: 300px;
                 height: 300px;
+                text-align: center;
                 border: 1px solid black;
                 margin: 20px;
                 border-radius: 4px;
+            }
+
+            .price-item-title {
+                font-size: 1.5rem;
+                background-color: rgba(0,0,0,.03);
+                height: 53px;
+                line-height: 53px;
+                border-bottom: 1px solid black;
+
+            }
+            .price-item-detail {
+                margin-bottom: 30px;
+            }
+            .price-item-price {
+                font-size: 2.5rem;
+                font-weight: bold;
+                padding: 20px;
+            }
+
+            .price-item-button {
+                display: inline-block;
+                border-radius: 4px;
+                background-color: #f4511e;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 28px;
+                
+                padding: 10px;
+                width: 200px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+
+            .price-item-button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .price-item-button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+            .price-item-button:hover span {
+                padding-right: 25px;
+            }
+            .price-item-button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+
+            .price-item-button--active {
+                background-color: #007bff;
+                color: white;
             }
 
         </style>
@@ -77,13 +144,46 @@
             </div>
             <div class="prices">
                 <div class="price-item">
-                    price1
+                    <div class="price-item-title">
+                        free
+                    </div>
+                    <div class="price-item-price">
+                        $0 / mo
+                    </div>
+                    <div class="price-item-detail"> 
+                        10 users included
+                    </div>
+                    <button class="price-item-button">  
+                        Click me
+                    </button>
                 </div>
                 <div class="price-item">
-                    price2
+                    <div class="price-item-title">
+                        Pro
+                    </div>
+                    <div class="price-item-price">
+                        $15 / mo
+                    </div>
+                    <div class="price-item-detail"> 
+                        20 users included
+                    </div>
+                    <button class="price-item-button price-item-button--active">  
+                        Get started
+                    </button>
                 </div>
                 <div class="price-item">
-                    price3
+                    <div class="price-item-title">
+                        Enterprise
+                    </div>
+                    <div class="price-item-price">
+                        $29 / mo
+                    </div>
+                    <div class="price-item-detail"> 
+                        30 users included
+                    </div>
+                    <button class="price-item-button price-item-button--active">  
+                        <span>Contact us</span>
+                    </button>
                 </div>
             </div>
         </div>
