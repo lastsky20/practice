@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">HTML 내용 변경</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "JavaScript can change HTML content"'>Click Me 2!</button>
+<br>
+
+<p>이미지(src) 변경</p>
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+<br>
+
+<p id="demo2">CSS font 스타일 변경</p>
+<button type="button" onclick="document.getElementById('demo2').style.fontSize='35px'">Click Me!</button>
+<br>
+
+<p id="demo3">HTML 요소 숨기기</p>
+<button type="button" onclick="document.getElementById('demo3').style.display='none'">Click Me!</button>
+<button type="button" onclick="document.getElementById('demo3').style.display='block'">Click Me!</button>
+<br>
+
+
+</body>
+</html>

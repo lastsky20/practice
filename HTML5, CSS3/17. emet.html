@@ -1,0 +1,336 @@
+<!-- 
+    emet
+    html:5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+-->
+
+
+<!--
+    emet
+    div.container>div.item.item${item$}*10
+
+<div class="container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+    <div class="item item4">item4</div>
+    <div class="item item5">item5</div>
+    <div class="item item6">item6</div>
+    <div class="item item7">item7</div>
+    <div class="item item8">item8</div>
+    <div class="item item9">item9</div>
+    <div class="item item10">item10</div>
+</div>
+-->
+
+<!-- div>class.container>div.class.item1
+<div class="class container">
+    <div class="class item1"></div>
+</div> -->
+
+<!-- div.class.container
+div class="class container"></div> -->
+
+Emmet이란?
+강력한 자동완성 기능 등으로 HTML 작성 속도를 크게 향상시켜주는 플러그인
+Emmet (에밋)을 사용하면 HTML & CSS의 작업 속도를 엄청나게 향상시킬 수 있다!! 👏🏽👏🏼👏🏻
+VS Code는 emmet을 기본적으로 지원하고 Tab키를 통해 사용한다.
+
+ 
+🧶 HTML
+구조화 하기 (Nesting operators)
+Emmet의 문법을 활용하여 요소들의 구조를 간편히 생성할 수 있다.
+
+Emmet 문법
+요소 (Elements) 생성
+
+생성하려는 요소의 이름을 입력한 뒤 tab을 누르면 태그가 자동 생성된다.
+Emmet에는 미리 정해진 태그 이름이 없다. 즉, 아무 이름으로나 태그를 생성할 수 있다.(에디터에 따라 그렇지 않은 경우도 있다.)
+
+html:5[tab]
+결과:
+
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+helloworld[tab]
+결과:
+
+<helloworld></helloworld>
+ 
+
+자식(하위) 요소 >
+ 
+
+>를 사용하여 자식 요소를 생성할 수 있다. :
+div>ul>li
+   <div>
+       <ul>
+         <li></li>
+       </ul>
+   </div>
+형제 요소 +
+ 
+
++를 사용하여 한 요소와 같은 단계에 위치한 요소를 생성할 수 있다.
+div>p+span
+  <div>
+      <p></p>
+      <span></span>
+  </div>
+올라가기 ^
+^를 사용하여 한 단계 위에 요소를 배치할 수 있다.
+div>ul>li^p+a
+   <div>
+       <ul>
+           <li></li>
+       </ul>
+       <p></p>
+       <a href=""></a>
+   </div>
+^를 여러번 입력하면 입력한 만큼 올라갈 수 있음
+div>ul>li^^div
+   <div>
+       <ul>
+           <li></li>
+       </ul>
+   </div>
+   <div></div>
+ 
+
+div+div>p>span+em^bq
+span+em은 p태그의 하위 단계에 위치하지만 bq는 ^로 인해 p태그와 같은 단계에 위치하게 된다.
+
+결과 :
+
+<div></div>
+<div>
+    <p>
+        <span></span>
+        <em></em>
+    </p>
+    <blockquote></blockquote>
+</div>
+Use as many ^ as needed to move up more levels.
+
+div+div>p>span+em^bq
+<div></div>
+<div>
+  <span>
+    <p><span></span><em></em></p>
+    <blockquote></blockquote>
+  </span>
+</div>
+ 
+
+div+div>p>span+em^^bq
+<div></div>
+<div>
+  <span>
+    <p><span></span><em></em></p>
+  </span>
+  <blockquote></blockquote>
+</div>
+div+div>p>span+em^^^bq
+<div></div>
+<div>
+  <span>
+    <p><span></span><em></em></p>
+  </span>
+</div>
+<blockquote></blockquote>
+반복하기 *
+Multiplication: *
+Use ** * ** operator to define how many times element should be outputted.
+div>ul>li*3
+<div>
+       <ul>
+           <li></li>
+           <li></li>
+           <li></li>
+       </ul>
+   </div>
+ 
+
+ul>li*5
+…outputs to
+
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+ul>li*3
+…outputs to
+
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+그룹화 ()
+Grouping: ()
+Use () to group subtrees in complex abbreviations.
+div>(header>ul>li*2)+footer
+   <div>
+       <header>
+           <ul>
+               <li></li>
+               <li></li>
+           </ul>
+       </header>
+       <footer></footer>
+   </div>
+
+  ( 🎈 그룹화를 통해 `footer`는 `header`의 형제 요소가 되었다. )
+만약 괄호 없이 div>header>ul>li*2+footer로 작성하게 된다면?
+   <div>
+       <header>
+           <ul>
+               <li></li>
+               <li></li>
+               <footer></footer>
+           </ul>
+       </header>
+   </div>
+↘ 🧐 footer가 li의 형제요소가 되어버리니 주의하자
+
+div>(header>ul>li*2>a)+footer>p
+
+div>(header>ul>li*2>a)+footer>p
+…expands to
+
+<div>
+    <header>
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </header>
+    <footer>
+        <p></p>
+    </footer>
+</div>
+Each group contains abbreviation subtree and all the following elements are inserted at the same level as the first element of group.
+
+It is possible to nest groups inside each other and combine them with ** * ** operator.
+
+(div>dl>(dt+dd)*3)+footer>p
+<div>
+  <dl>
+    <dt></dt>
+    <dd></dd>
+    <dt></dt>
+    <dd></dd>
+    <dt></dt>
+    <dd></dd>
+  </dl>
+</div>
+<footer>
+  <p></p>
+</footer>
+
+
+
+
+Emmet을 이용하면 이렇게나 쉽고 간편하게 요소들을 만들 수 있다.
+뿐만 아니라 class나 id 값 혹은 다른 속성 값들을 넣어 만들 수도 있다.
+
+
+클래스 .class
+ 
+
+div.container
+<div class="container"></div>
+너무나 쉽게 container라는 클래스를 가진 div가 생성되었다.
+기본은 div이기 때문에 div를 생략하고 - .container라고 입력해도 결과는 같다!
+
+아이디 #id
+ 
+
+span#hello
+<span id="hello"></span>
+속성 [attr]
+ 
+
+td[title="bye" colspan=5]
+<td title="bye" colspan="5"></td>
+넘버링 $
+ 
+
+$ - 숫자를 순서대로 나열 {자동 넘버링 부여}
+
+ 
+ul>li.item$*5
+   <ul>
+       <li class="item1"></li>
+       <li class="item2"></li>
+       <li class="item3"></li>
+       <li class="item4"></li>
+       <li class="item5"></li>
+   </ul>
+ul>li.item$@5*5 - @뒤의 숫자부터 시작
+   <ul>
+       <li class="item5"></li>
+       <li class="item6"></li>
+       <li class="item7"></li>
+       <li class="item8"></li>
+       <li class="item9"></li>
+   </ul>
+ 
+
+텍스트 {}
+ 
+
+{} - {중괄호} 안에 넣으려는 텍스트를 입력
+
+.fruit{banana}
+<div class="fruit">banana</div>
+.container>ul.list>li.list-item*5>a{list$}
+   <div class="container">
+       <ul class="list">
+           <li class="list-item"><a href="">list1</a></li>
+           <li class="list-item"><a href="">list2</a></li>
+           <li class="list-item"><a href="">list3</a></li>
+           <li class="list-item"><a href="">list4</a></li>
+           <li class="list-item"><a href="">list5</a></li>
+       </ul>
+   </div>
+🧶 CSS
+ 
+
+[ 단위 ]
+p → %
+e → em
+
+w100
+width: 100px; (기본이 px단위)
+w50p
+h100p
+width: 50%; 
+height: 100%;
+m10p30e5
+margin: 10% 30em 5px;

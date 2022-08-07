@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>htmlPractice</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+
+        <style> 
+        a {
+            background-color: gray;
+            font-size: x-large;
+            color: red;
+            align-content: center;
+            padding: 0px 10px 10px 0px;
+            
+        }
+        a:hover {
+            color:blue;
+        }
+        a:active {
+            color:black;
+        }
+        </style>
+
+    </head>
+
+    <body>
+
+
+
+        <div class="item">Hello</div>
+        <h1>Hello,<br /> worlds</h1> <!-- 줄바꿈 태그 br -->
+        <h2>Hello</h2>
+        <h3>Hello</h3>
+        <h4>Hello</h4>
+        <h5>Hello</h5>
+        <h6>Hello</h6>
+
+
+        <!-- 
+        <b> ~ </b>	굵게(bold)
+        <i> ~ </i>	이텔릭(italic)
+        <small> ~ <small>	작게
+        <ins> ~ </ins>	밑줄(insert)
+        <del> ~ </del>	가운데 선
+        <mark> ~ </mark>	하이라이트
+        <strong> ~ </strong>	중요
+        <code> ~ </code>	코드
+        <em> ~ </em>	강조(emphasized text)
+        <sup> ~ </sup>	위 첨자(superscript)
+        <sub> ~ </sub>	아래 첨자(subscript) 
+        -->
+
+        <!-- 명시적인 강조 태그(시야 강조) bold, i -->
+        <b>Hello bold</b><br />
+        <!-- 의미론적 강조 태그(내부적 강조, 검색엔진 등) strong, em -->
+        <strong>Hello Strong<br /></strong>
+        <!-- 명시적인 강조 태그(시야 강조) bold, i -->
+        <i>Hello italic</i><br />
+        <!-- 의미론적 강조 태그(내부적 강조, 검색엔진 등) strong, em -->
+        <em>Hello EM</em>
+        <p>Hellp p</p> <!-- 하나의 문단을 생성 -->
+        <ins>hello int<br /></ins> <!-- 밑줄 -->
+        <del>Hello Del<br /></del> <!-- 취소선 -->
+
+        <!--
+        target
+        _blank : 새로운 창
+        _self : 현재 창
+        _parent : 웹 브라우저 부모 창
+        _top : 웹 브라우저 전체 영역
+        -->
+        <!-- <img src="../img.png"> -->
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls /></video>
+        
+
+        <!--
+        속성
+        src : 이미지 파일 경로
+        title : 이미지 제목
+        width : 이미지 가로 크기
+        height : 이미지 세로 크기
+        alt : 이미지 대체 텍스트
+        style : 이미지 스타일 정의
+        border : 이미지 테두리 두
+        -->
+        <img src="dog.jpg" alt="강아지 사진" width="200" height="100">
+        <img src="cat.jpg" title="고양이 사진" style="float : right; width : 200px; height : 100px;">
+
+        <!--
+        - `src` : 오디오 파일의 경로
+        - `controls` : 오디오 파일의 재생 제어기 표시
+        - `autoplay` : 자동 재생
+        - `loop` : 반복 재생
+        - `muted` : 초기에 음소거 상태
+        - `preload` : 오디오 파일 미리 다운로드
+        -->
+        <audio src="dog.MP3" controls></audio>
+        
+        <!--현재 창에서 링크로 이동-->
+        <a href="https://google.com">google</a> 
+        
+        <!--새로운 창에서 링크로 이동-->
+        <a href="https://google.com" target="_blank">google</a> <!-- Hyper reference -->
+
+
+        <!-- 테이블 태그 -->
+        <table border="1"> 
+            <!-- 칼럼 -->
+            <thead> 
+                <th>name</th> <!-- 헤더 -->
+                <th>age</th>
+            </thead>
+            <!-- 내용 -->
+            <tbody> 
+                <tr>
+                    <td>mike</td> <!-- 데이터 -->
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <td>brown</td>
+                    <td>41</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="1">
+            <caption>시간표</caption>
+            <thead>
+                <tr>
+                    <th rowspan=2>교시</th>
+                    <th colspan=5>요일</th>
+                </tr>
+                <tr>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1교시</td>
+                    <td>컴퓨터개론</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2교시</td>
+                    <td></td>
+                    <td>머신러닝</td>
+                    <td></td>
+                    <td>웹과인터넷</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3교시</td>
+                    <td></td>
+                    <td></td>
+                    <td>프로그래밍</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4교시</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+          </table>
+
+        <!-- 리스트(목록) 태그-->
+        <!-- <ul style="list-style-type: circle"></ul> 스타일 지정가능 -->
+        <!-- <ol type="i"></ol> 글머리 기호 지정 가능("1", "A", "I","i") -->
+        <!-- 순서가 있는 리스트(ordered list) -->
+        <ol>    
+            <li>mike</li>
+            <li>brown</li>
+        </ol>
+
+        <!-- 순서가 없는 리스트(unordered list), 리스트아이템(list item, li)-->
+        <ul>    
+            <li>mike</li>
+            <li>brown</li>
+        </ul>
+
+        <!-- 구역을 나누는 태그(한줄 전체, block element) -->
+        <div class="top">top</div>
+        <div class="middle">middle</div>
+        <div class="bottom">bottom</div>
+
+        <!-- 구역을 나누는 태그(자기 내용 만큼만, inline element) -->
+        <span class="like">like</span>
+        <span class="sub">sub</span>
+        <span class="comment">comment</span>
+
+        <!--
+            페이지 내에 또 다른 웹페이지를 표시할 때 사용
+
+        -->
+        
+        <iframe src="basic.html" name="iframe_a" height="300px" width="300" title="Iframe Example"></iframe>
+
+        <!-- 입력 관련 태그 -->
+        Text<input type="text" />
+        CheckBox<input type="checkbox" />
+        Radio <input type="radio" />
+        Color <input type="color" />
+        여러 문장 <textarea></textarea>
+        Dropdown <select name="name">
+            <option value="Jen">Jen</option>
+            <option value="won">won</option>
+        </select>
+
+        <!-- 입력한 텍스트 서식을 그대로 사용 -->
+        <pre>
+            입 력 한    텍스트
+            서식 을 
+            그
+            대
+            로
+            사  용
+        </pre>
+
+
+        <!--
+         - `name` : form 이름
+         - `action` : 입력 데이터를 처리하는 웹 프로그램(JSP, PHP 등)
+         - `method` : 전송 방식
+            (GET:비보안, URL에 데이터 포함, 2048 글자수 제한, / POST: 보안, 로그인 등)
+         - `type` : 입력 양식 모양
+        -->
+        <form>
+            <input type="email" placeholder="이메일" />
+            <input type="password" placeholder="비밀번호" />
+            <button type="submit">Login</button>
+        </form>
+        <br>
+        <form name="fname", action="login.jsp", method="post"> 
+            <input type="text" name="name1" value="value1">
+            <button type="submit">Login</button>
+        </form>
+        <!--
+            <input>	입력 제어
+            <textarea>	여러줄의 입력
+            <label>	<input> 요소의 라벨
+            <fieldset>	폼에 관련 요소
+            <legend>	<fieldset> 요소의 캡션
+            <select>	드롭다운 리스트
+            <optgroup>	드롭다운 목록에서 관련 옵션 그룹
+            <option>	드롭다운 목록에서 옵션
+            <button>	버튼
+            <datalist>	입력 제어에 대해 미리 정의된 옵션 리스트
+            <output>	계산 결과
+        -->
+        <br /><br />
+        <form oninput="r.value=parseInt(x.value)*parseInt(y.value)">
+            <input type="number" id="x" name="x" value="10">
+            *
+            <input type="number" id="y" name="y" value="20">
+            =
+            <output name="r" for="x y"></output>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
+
+
+          <!--
+            ## class와 id
+
+            ### class 속성
+
+            - 여러 태그들을 하나의 그룹으로 그룹핑
+            - 태그에 `class="클래스명"` 으로 지정
+            - `.클래스이름`으로 선택
+
+            ### id 속성
+
+            - 하나의 태그에 고유 `id` 부여
+            - 태그에 `id="고유id값"` 으로 지정
+            - `#id값`으로 선택
+
+          -->
+
+
+          <!--
+            시맨틱 관련 태그
+            웹 페이지 내에 의미를 부여하기 위한 태그
+            검색엔진/로봇 수집 등에 사용
+
+            <article>	독립적인 자체 컨텐츠 정의
+            <aside>	페이지 내용과 별도 내용 정의
+            <details>	사용자가 보거나 숨길 수 있는 추가 세부사항 정의
+            <figcaption>	<figure> 요소에 대한 캡션
+            <figure>	일러스트, 다이어그램, 사진, 코드 목록 등의 자체 컨텐츠 지정
+            <footer>	문서 또는 섹션의 바닥글 정의
+            <header>	문서 또는 섹션의 머리글 정의
+            <main>	문서의 주요 컨텐츠 지정
+            <mark>	강조 표시된 텍스트 정의
+            <nav>	내비게이션 링크 정의
+            <section>	문서의 섹션 정의
+            <summary>	<details> 요소에 대한 주제 정의
+            <time>	날짜/시간 정의
+          -->
+
+          
+
+    </body>
+</html>

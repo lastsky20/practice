@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- getElementById 메소드 출력-->
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = 5 + 6;
+    </script>
+
+    <!-- 테스팅 목적으로 사용(document.write) -->
+    <button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+    <!-- 경고창 팝업(window 키워드를 제외하고 alert 만 사용 가능) -->
+    <script>
+        window.alert(5 + 6);
+    </script>
+
+    <!-- 콘솔에서 사용 -->
+    <script>
+        console.log(5 + 6);
+    </script>
+
+    <!-- 화면 출력 -->
+    <button onclick="window.print()">Print this page</button>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- head 부분에 삽입 ~ -->
+    <script>
+        function myFunction1() {
+        document.getElementById("demo").innerHTML = "My First JavaScript";
+    }
+    </script>
+    <!-- head 부분에 삽입 -->
+</head>
+<body>
+    <p id="demo">A paragraph changed</p>
+    <button type="button" onclick="myFunction1()">Try it</button>
+
+    <!-- body 부분에 삽입 ~ -->
+    <script>
+        function myFunction2() {
+            document.getElementById("demo").innerHTML = "Second"
+        }
+    </script>    
+    <!-- body 부분에 삽입 -->
+    <button type="button" onclick="myFunction2()">Try it 2</button>
+
+    <button type="button" onclick="myFunction3()">Try it 3</button>
+    <!-- 외부 파일로 삽입(myFunction3) ~ -->
+    <script src="script2.js"></script>
+    <!-- 외부 파일로 삽입 -->
+
+    <!-- 외부 링크로 삽입(myFunction) ~ -->
+    <script src="https://www.w3schools.com/js/myScript.js"></script>
+    <!-- 외부 링크로 삽입 -->
+    <button type="button" onclick="myFunction()">Try it 4</button>
+
+    <!-- 파일 패스로 삽입 
+    <script src="/js/myScript.js"></script>
+    -->
+
+</body>
+</html>
+
+
+
