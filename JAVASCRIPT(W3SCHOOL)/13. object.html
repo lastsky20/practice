@@ -1,0 +1,58 @@
+<!-- javascript object
+<script>
+    // Create an object:
+    const person = {
+      firstName: "John",
+      lastName: "Doe",
+      age: 50,
+      eyeColor: "blue"
+    };
+    
+    // Display some data from the object:
+    document.getElementById("demo").innerHTML =
+    person.firstName + " is " + person.age + " years old.";
+</script> -->
+
+
+<!-- 오브젝트 접근방법 / person["firstName"], person.fitstName
+// Create an object:
+<script>
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+
+// Display some data from the object:
+document.getElementById("demo").innerHTML =
+person["firstName"] + " " + person["lastName"];
+</script> -->
+
+
+<!-- 함수 반환(this)
+<script>
+const person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+</script> -->
+
+<!-- 오브젝트의 메소드 접근
+<script>
+    // Create an object:
+    const person = {
+      firstName: "John",
+      lastName: "Doe",
+      id: 5566,
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+    
+    // Display data from the object:
+    document.getElementById("demo").innerHTML = person.fullName();
+</script> -->

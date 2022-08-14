@@ -1,0 +1,69 @@
+
+<!-- 
+<script>
+    function myFunction(p1, p2) {
+      return p1 * p2;
+    }
+    document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script> -->
+
+<!-- ex
+  function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+} -->
+
+
+<!-- Function Return
+<script>
+  var x = myFunction(4, 3);
+  document.getElementById("demo").innerHTML = x;    // result 12
+  
+  function myFunction(a, b) {
+    return a * b;
+  }
+  </script> -->
+
+<!-- 화씨(Fahrenheit) 를 섭씨(Celsius) 로 변환
+  <script>
+    function toCelsius(f) {
+      return (5/9) * (f-32);
+    }
+    document.getElementById("demo").innerHTML = toCelsius(77);    // result 25
+  </script> -->
+
+
+<!-- 함수의 괄호를 사용하지 않을경우 객체가 반환
+  <script>
+    function toCelsius(f) {
+      return (5/9) * (f-32);
+    }
+    document.getElementById("demo").innerHTML = toCelsius;    //result function toCelsius(f) { return (5/9) * (f-32); }
+    </script> -->
+
+
+<!-- Functions Used as Variable Values
+    <script>
+      document.getElementById("demo").innerHTML =
+      "The temperature is " + toCelsius(77) + " Celsius";
+      // 함수로 호출
+
+      let x = toCelsius(77);
+      let text = "The temperature is " + x + " Celsius";
+      document.getElementById("demo2").innerHTML =text;
+      // 변수에 함수를 호출하여 값을 할당
+
+      function toCelsius(fahrenheit) {
+        return (5/9) * (fahrenheit-32);
+      } 
+    </script> -->
+
+
+<!-- Local Variables
+// code here can NOT use carName
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+// code here can NOT use carName -->
+
+

@@ -14,18 +14,19 @@
         x = 5;        // Statement 2
         y = 6;        // Statement 3
         z = x + y;    // Statement 4
-
+        
         document.getElementById("demo").innerHTML =
         "The value of z is " + z + ".";  
     </script>
+
 </body>
 </html>
 
 <!-- 
 Keyword	Description
-var :	Declares a variable
-let :	Declares a block variable
-const :	Declares a block constant
+var :	Declares a variable (function-scoped) 함수 내에서 사용 가능
+let :	Declares a block variable (block-scoped) 블록 내에서 사용 가능
+const :	Declares a block constant (block-scoped) 블록 내에서 사용 가능 // 고정값은 리터럴(literals)
 if :	Marks a block of statements to be executed on a condition
 switch : Marks a block of statements to be executed in different cases
 for	: Marks a block of statements to be executed in a loop

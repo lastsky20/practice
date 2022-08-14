@@ -1,0 +1,68 @@
+<!-- let 변수는 재선언 안됨
+let x = "John Doe";
+let x = 0; -->
+
+// SyntaxError: 'x' has already been declared
+
+<!-- var 변수는 재선언 가능
+var x = "John Doe";
+var x = 0; -->
+
+<!-- 블록 밖에서 사용 못함
+{
+    let x = 2;
+  }
+// x can NOT be used here -->
+
+<!-- 블록 밖에서 사용 가능 
+{
+    var x = 2;
+  }
+// x CAN be used here -->
+
+<!-- 여러번 재 선언 가능(var)
+var x = 10;
+// Here x is 10
+{
+var x = 2;
+// Here x is 2
+}
+// Here x is 2 -->
+
+<!-- 같은 블록에서만 사용 가능(let)
+let x = 10;
+// Here x is 10
+{
+let x = 2;
+// Here x is 2
+}
+// Here x is 10 -->
+
+<!-- 사용 불가능
+var x = 2;    // Allowed
+let x = 3;    // Not allowed
+
+{
+    let x = 2;    // Allowed
+    let x = 3     // Not allowed
+}
+
+{
+    let x = 2;    // Allowed
+    var x = 3     // Not allowed
+} -->
+
+
+<!-- 사용 가능
+let x = 2;    // Allowed
+{
+    let x = 3;    // Allowed
+}
+{
+    let x = 4;    // Allowed
+} -->
+
+
+<!-- 같은 블록에서 재 대입 불가능
+carName = "Saab";
+let carName = "Volvo"; -->
