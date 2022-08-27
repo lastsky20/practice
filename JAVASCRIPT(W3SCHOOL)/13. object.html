@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
 <!-- javascript object
 <script>
     // Create an object:
@@ -29,7 +39,8 @@ person["firstName"] + " " + person["lastName"];
 </script> -->
 
 
-<!-- 함수 반환(this)
+<p id="demo1"> </p>
+
 <script>
 const person = {
     firstName: "John",
@@ -39,7 +50,8 @@ const person = {
       return this.firstName + " " + this.lastName;
     }
   };
-</script> -->
+  document.getElementById("demo1").innerHTML = person.fullName();
+</script>
 
 <!-- 오브젝트의 메소드 접근
 <script>
@@ -56,3 +68,6 @@ const person = {
     // Display data from the object:
     document.getElementById("demo").innerHTML = person.fullName();
 </script> -->
+
+</body>
+</html>

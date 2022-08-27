@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <script>
+        let text = `He's often called "Johnny"`;
+        document.getElementById("demo1").innerHTML = 
+        "원본 텍스트: " + `He's often called "Johnny"` + "<br>" + 
+        "결과: " + text;
+    </script>
+
+<p id="demo2"></p>
+    <script>
+        let text2 =
+        `The quick
+        brown fox
+        jumps over
+        the lazy dog`;
+        
+        document.getElementById("demo2").innerHTML =
+        "원본 텍스트: " + text2 + "<br>" + 
+        "결과: " + text2;
+    </script>
+
+<p id="demo3"></p>
+    <script>
+        let firstName = "John";
+        let lastName = "Doe";
+        let text3 = `Welcome ${firstName}, ${lastName}!`;
+        
+        document.getElementById("demo3").innerHTML =
+        "fistname: John, lastName: Doe" + "<br>" +
+        "`Welcome ${firstName}, ${lastName}!`" + "<br>" + 
+        "결과: " + text3;
+    </script>
+
+<p id="demo4"></p>
+    <script>
+        let price = 10;
+        let VAT = 0.25;
+        let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+        
+        document.getElementById("demo4").innerHTML = 
+        "`Total: ${(price * (1 + VAT)).toFixed(2)}`" + "<br>" + 
+        "결과: " + total;
+    </script>
+
+
+<p id="demo5"></p>
+    <script>
+        let header = "Templates Literals";
+        let tags = ["template literals", "javascript", "es6"];
+        
+        let html = `<h2>${header}</h2><ul>`;
+        
+        for (const x of tags) {
+        html += `<li>${x}</li>`;
+        }
+        html += `</ul>`;
+
+        document.getElementById("demo5").innerHTML = html;
+    </script>
+
+</body>
+</html>

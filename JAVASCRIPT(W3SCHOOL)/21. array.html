@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    demo1
+    <p id="demo1"></p>
+
+    <script>
+        const cars1 = [
+        "Saab",
+        "Volvo",
+        "BMW"
+        ];
+        document.getElementById("demo1").innerHTML = cars1;
+    </script>   
+    demo2
+    <p id="demo2"></p>
+
+    <script>
+        const cars2 = [];
+        cars2[0]= "Saab";
+        cars2[1]= "Volvo";
+        cars2[2]= "BMW";
+        document.getElementById("demo2").innerHTML = cars2;
+    </script>
+
+    demo3, 4
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        const cars3 = ["Saab", "Volvo", "BMW"];
+        document.getElementById("demo3").innerHTML = cars3[0];
+        documnet.getElementById("demo4").innerHTML = cars3;
+    </script>
+
+    <p id="demo5"></p>
+
+    <script>
+        const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo5").innerHTML = fruits1.length;
+        // 배열의 전체 항목 수 반환
+    </script>
+
+    <p id="demo6"></p>
+
+    <script>
+        var fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo6").innerHTML = fruits2[fruits2.length-1];
+        // 배열의 마지막 항목 반환 응용
+    </script>
+
+    demo7
+    <p id="demo7"></p>
+
+    <script>
+        const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+        let fLen = fruits3.length;
+
+        let text = "<ul>";
+        for (let i = 0; i < fLen; i++) {
+        text += "<li>" + fruits3[i] + "</li>";
+        }
+        text += "</ul>";
+
+        document.getElementById("demo7").innerHTML = text;
+        // for 문을 활용한 배열의 순차적 접근
+    </script>
+
+    demo8
+    <p id="demo8"></p>
+
+    <script>
+        const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+
+        let text2 = "<ul>";
+        fruits4.forEach(myFunction);
+        text2 += "</ul>";
+        document.getElementById("demo8").innerHTML = text2;
+
+        function myFunction(value) {
+        text2 += "<li>" + value + "</li>";
+        } 
+        // fruits.forEach 메소드를 활용한 순차적 접근 *for문 보다 간편
+    </script>
+
+    <button onclick="myFunction1()">Try it</button>
+    <p id="demo9"></p>
+
+    <script>
+        const fruits5 = ["Banana", "Orange", "Apple"];
+        document.getElementById("demo9").innerHTML = fruits5;
+
+        function myFunction1() {
+        fruits5.push("Lemon");
+        document.getElementById("demo9").innerHTML = fruits5;
+    }
+    // push 를 사용하여 배열값을 추가
+    </script>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo10"></p>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple"];
+        document.getElementById("demo10").innerHTML = fruits;
+
+        function myFunction2() {
+        fruits[fruits.length] = "Lemon";
+        document.getElementById("demo10").innerHTML = fruits;
+    }
+    // 배열의 length 값으로 배열의 마지막에 값을 추가
+    </script>
+
+    <p id="demo11"></p>
+
+    <script>
+        //const points = new Array(40, 100, 1, 5, 25, 10);
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo11").innerHTML = points[1];  
+        
+        // 배열을 초기화 하는 방법 2가지
+    </script>
+    demo12
+    <p id="demo12"></p>
+
+    <script>
+        var points12 = [40];
+        document.getElementById("demo12").innerHTML = points12[0];  
+        // 1개의 데이터를 가질때 배열의 선언방법(error: var points = new Array(40);)
+    </script>
+    
+    <p>The typeof operator, when used on an array, returns object:</p>
+    demo13
+    <p id="demo13"></p>
+    
+    <script>
+        const fruits13 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo13").innerHTML = typeof fruits13;
+        // typeof 연산자로 배열의 확인 불가
+    </script>
+
+
+    demo14
+    <p id="demo14"></p>
+    <script>
+        const fruits14 = ["Banana", "Orange", "Apple"];
+        document.getElementById("demo14").innerHTML = Array.isArray(fruits14);
+        // .isArray 연산자로 확인(리턴값 true)
+    </script>
+    demo15
+    <p id="demo15"></p>
+    <script>
+        var fruits15 = ["Banana", "Orange", "Apple"];
+        document.getElementById("demo15").innerHTML = fruits15 instanceof Array   ;
+        // instanceof 연산자로 확인(리턴값 true)
+    </script>
+
+</body>
+</html>

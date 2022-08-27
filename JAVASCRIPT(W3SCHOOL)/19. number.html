@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo1"></p>
+    <script>
+        let x = 0.1;
+        let y = 0.2;
+        document.getElementById("demo1").innerHTML = ((x*10) + (y*10)) / 10;
+    </script>
+
+    <p id="demo2"></p>
+    <script>
+        document.getElementById("demo2").innerHTML = 100 / "Apple";
+    </script>
+
+    <p id="demo3"></p>
+    <script>
+        let myNumber = 2; 
+        let txt = "";
+        while (myNumber != Infinity) {
+        myNumber = myNumber * myNumber;
+        txt = txt + myNumber + "<br>";
+        }
+        document.getElementById("demo3").innerHTML = txt;
+    </script>
+
+    <p id="demo4"></p>
+    <script>
+        let x2 = 2/0;
+        let y2 = -2/0;
+        document.getElementById("demo4").innerHTML = x2 + "<br>" + y2;
+    </script>
+
+    <p id="demo5"></p>
+    <script>
+        let x = 0xFF;   //Hexa  decimal
+        document.getElementById("demo5").innerHTML = "0xFF = " + x;
+    </script>
+
+    <p id="demo6"></p>
+    <script>
+        let myNumber2 = 32;
+        document.getElementById("demo6").innerHTML =
+        "Decimal 32 = " + "<br><br>" + 
+        "Hexatrigesimal (base 36): " + myNumber2.toString(36) + "<br>" +
+        "Duotrigesimal (base 32): " + myNumber2.toString(32) + "<br>" +
+        "Hexadecimal (base 16): " + myNumber2.toString(16) + "<br>" +
+        "Duodecimal (base 12): " + myNumber2.toString(12) + "<br>" +
+        "Decimal (base 10): " + myNumber2.toString(10) + "<br>" +
+        "Octal (base 8): " + myNumber2.toString(8) + "<br>" +
+        "Binary (base 2): " + myNumber2.toString(2);
+    </script>
+
+    <p id="demo7"></p>
+    <p id="demo77"></p>
+
+    <script>
+        // x is a number
+        let x3 = 123;
+        // y is a Number object
+        let y3 = new Number(123);
+        document.getElementById("demo7").innerHTML = typeof x3 + "<br>" + typeof y3;
+
+
+        // let xy = new Number(500)
+        // document.getElementById("demo7").innerHTML = xy.toString();
+
+    </script>
+
+
+    <p id="demo2"></p>
+
+    <script>
+        let x = 0.2 + 0.1;
+        document.getElementById("demo1").innerHTML = "0.2 + 0.1 = " + x;
+        let y = (0.2*10 + 0.1*10) / 10;
+        document.getElementById("demo2").innerHTML = "0.2 + 0.1 = " + y;
+    </script>
+    <!-- 소수점 계산은 정수로 계산 후 다시 소수로 바꾸어준다. -->
+
+</body>
+</html>
