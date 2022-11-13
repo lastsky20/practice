@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css-margin
+        margin-top
+        margin-right
+        margin-bottom
+        margin-left */
+
+        /* css-margin-value
+        auto - the browser calculates the margin
+        length - specifies a margin in px, pt, cm, etc.
+        % - specifies a margin in % of the width of the containing element
+        inherit - specifies that the margin should be inherited from the parent element */
+
+        .demo1 {
+            border : 1px solid black;
+            margin-top : 5px;
+            margin-bottom : 100px;
+            margin-right : 150px;
+            margin-left :  150px;
+            background-color: aqua;
+        }
+
+        .demo2 {
+            margin : 25px 50px 75px 100px;  /* four value : top, right, bottom, left */
+            background-color: aqua;
+        }
+
+        .demo3 {
+            margin : 25px 50px 75px;    /* three balue : top, right+left, bottom */
+            background-color: aqua;
+        }
+
+        .demo4 {
+            margin : 25px 100px;     /* two value : top + bottom, right + left */
+            background-color: aqua;
+        }
+
+        .demo5 {
+            margin : 25px;      /* one value : top + right + bottom + left */
+            background-color: aqua;
+            border : 1px solid black;
+            
+        }
+
+        .demo6 {
+            width : 300px;
+            border: 1px solid black;
+            margin : auto;  /* 센터로 정렬 */
+            background-color: aqua;
+        
+        }
+
+        .demo7 {
+            border : 1px solid black;
+            margin-left : 50px;
+        }
+        p.ex1 {
+            margin-left : inherit;  /* 상위 개체(div.demo7) 의 마진 값을 상속(inherit) */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="demo1">demo1</div>
+    <div class="demo2">demo2</div>
+    <div class="demo3">demo3</div>
+    <div class="demo4">demo4</div>
+    <div class="demo5">demo5</div>
+    <div class="demo6">demo6</div>
+    <div class="demo7">demo7
+        <p class="ex1">this is margin inherit</p>
+
+    </div>
+</body>
+</html>

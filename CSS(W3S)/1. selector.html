@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #para1 {    /* id */
+            text-align: center;
+            color: red;
+        }
+
+        .center {   /* class */
+            text-align: center;
+            color: red;
+        }
+
+        p.center2 {     /* p.class */
+            text-align: center;
+            color: red;
+        }
+
+        p.center3 {
+            text-align: center;
+            color: red;
+        }
+
+        p.large3 {
+            font-size: 300%;
+        }
+
+        /* 전역 선택자 */
+        * { 
+            text-align: center;
+            color: blue;
+        }
+
+        /* 그룹 선택자 */
+        /* h1, h2, p {
+            text-align: center;
+            color: red;
+        } */
+
+    </style>
+</head>
+<body>
+    <p id="para1">(#para1)Hello World!</p>
+    <p>This paragraph is not affected by the style.</p>
+
+    <h1 class="center">(.center)Red and center-aligned heading</h1>
+    <p class="center">(.center)Red and center-aligned paragraph.</p> 
+    <br/>
+    <h1 class="center2">This heading will not be affected</h1>
+    <p class="center2">(p.center2)This paragraph will be red and center-aligned.</p> 
+    <br/>
+    <h1 class="center3">(center3)This heading will not be affected</h1>
+    <p class="center3">(p.center3)This paragraph will be red and center-aligned.</p>
+    <p class="center3 large3">(p.large3)This paragraph will be red, center-aligned, and in a large font-size.</p> 
+    <br/>
+    
+</body>
+</html>

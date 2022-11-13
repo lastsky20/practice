@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        ul.a {
+            list-style-type: circle;
+        }
+
+        ul.b {
+            list-style-type: square;
+        }
+
+        ol.c {
+            list-style-type: upper-roman;
+        }
+
+        ol.d {
+            list-style-type: lower-alpha;
+            list-style-position: outside;
+
+        }
+
+        ul.e {
+            list-style-image: url('https://www.w3schools.com/css/sqpurple.gif');
+            list-style-position: inside;
+        }
+        ul.f {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.g    {
+        list-style: circle inside url("https://www.w3schools.com/css/sqpurple.gif");
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h2>The list-style-type Property</h2>
+
+    <p>Example of unordered lists:</p>
+    <ul class="a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <ul class="b">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+    <p>Example of ordered lists:</p>
+    <ol class="c">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+    <p>Example of ordered lists, position outside</p>
+    <ol class="d">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <p>image marker, position inside</p>
+    <ul class="e">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <p>remove default setting</p>
+      <ul class="f">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <p>short hand</p>
+    <ul class="g">
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Coca Cola</li>
+    </ul>
+
+</body>
+</html>

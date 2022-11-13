@@ -1,0 +1,40 @@
+
+.top {
+    /* display: flex ; */
+    border-bottom: 1px solid black;
+    background-color: red;
+    /* align-items: center; */
+    position: sticky;
+    top: 10px;
+}
+
+.company-name {
+    width: 100px;
+    height: 100px;
+    /* margin-left: 30px;
+    font-size: 2.5rem; */
+    color: blue;
+    background-color: black;
+    /* text-align: center; */
+    /* line-height: 100px; */
+    /* display: flex; */
+}
+
+.right-item {
+    color: blue;
+    width: 100px;
+    height: 100px;
+    /* margin-left: auto; */
+    /* text-align: center; */
+    background-color: yellow;
+    /* align-items: center; */
+    /* display: flex; */
+}
+
+.nav-item {
+    
+    /* background-color: aqua; */
+}
+.nav-item {
+
+}

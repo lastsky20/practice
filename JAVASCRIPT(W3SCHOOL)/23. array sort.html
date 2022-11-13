@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+    <p id="demo14"></p>
+    <button onclick="myFunction3()">Sort Random(1)</button>
+    <p id="demo15"></p>
+    <button onclick="myFunction4()">Sort Random(2)</button>
+
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    
+    <p id="demo18"></p>
+    <p id="demo19"></p>
+
+    <script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo1").innerHTML = fruits;
+    
+    fruits.sort();  // 알파벳 순으로 정렬
+    document.getElementById("demo2").innerHTML = fruits;
+    fruits.reverse();   // 알파벳 역순으로 정렬
+    document.getElementById("demo3").innerHTML = fruits;
+    
+    const points = [40, 100, 1, 5, 25, 10]; 
+    document.getElementById("demo4").innerHTML = points;  
+
+    points.sort(function(a, b){return a - b});      // 숫자 정렬
+    document.getElementById("demo5").innerHTML = points;
+
+    points.sort(function(a, b){return b - a});      // 숫자 역순 정렬
+    document.getElementById("demo6").innerHTML = points;
+
+    const points2 = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo13").innerHTML = points2;  
+
+
+    function myFunction1() {
+        points2.sort();     // 알파벳 순으로 정렬
+        document.getElementById("demo13").innerHTML = points;
+    }
+    function myFunction2() {
+        points2.sort(function(a, b){return a - b});     // 숫자 오름차순 정렬
+        document.getElementById("demo13").innerHTML = points2;
+    }
+    
+    const points3 = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo14").innerHTML = points3;
+
+    function myFunction3() {     // 랜덤 정렬(1)
+        points3.sort(function(){return 0.5 - Math.random()});
+        document.getElementById("demo14").innerHTML = points3;
+    }       
+
+    const points4 = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo15").innerHTML = points4;
+
+    function myFunction4() {        // 랜덤 정렬(2)
+        for (let i = points4.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i)
+            let k = points4[i]
+            points4[i] = points4[j]
+            points4[j] = k
+        }
+        document.getElementById("demo15").innerHTML = points4;
+    }
+
+    document.getElementById("demo16").innerHTML = "Max :" + myArrayMax(points4);
+    document.getElementById("demo17").innerHTML = "Min :" + myArrayMin(points4);
+
+    function myArrayMax(arr) {      // 최대값(max)
+        return Math.max.apply(null, arr);
+    }
+    
+    function myArrayMin(arr) {      // 최소값(min)
+        return Math.min.apply(null, arr);
+    }
+    
+
+    function myArrayMax1(arr) {      // 최대값 커스텀 소스
+        let len = arr.length;
+        let max = -Infinity;
+        while (len--) {
+            if (arr[len] > max) {
+            max = arr[len];
+            }
+        }
+        return max;
+    }
+       
+    function myArrayMin1(arr) {     // 최소값 커스텀 소스
+        let len = arr.length;
+        let min = Infinity;
+        while (len--) {
+            if (arr[len] < min) {
+            min = arr[len];
+            }
+        }
+        return min;
+    }
+    document.getElementById("demo18").innerHTML = "Max(1) :" + myArrayMax1(points4);
+    document.getElementById("demo19").innerHTML = "Min(1) :" + myArrayMin1(points4);
+
+
+    </script>
+
+</body>
+</html>
