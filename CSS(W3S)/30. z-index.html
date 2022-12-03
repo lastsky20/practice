@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .black-box {
+            position: relative;
+            z-index: 1;
+            border: 2px solid black;
+            height: 100px;
+            margin: 30px;
+        }
+
+        .gray-box {
+            position: absolute;
+            z-index: 3; /* gray box will be above both green and black box */
+            background: lightgray;
+            height: 60px;  
+            width: 70%;
+            left: 50px;
+            top: 50px;
+        }
+
+        .green-box {
+            position: absolute;
+            z-index: 2; /* green box will be above black box */
+            background: lightgreen;
+            width: 35%;
+            left: 270px;
+            top: -15px;
+            height: 100px;
+        }
+        /* z-index 값을 지정하지 않을경우 html 코드 순서대로 오버래핑 돼며, 마지막 요소가 제일 위로 옴 */
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="black-box">Black box (z-index: 1)</div>
+    <div class="gray-box">Gray box (z-index: 3)</div>
+    <div class="green-box">Green box (z-index: 2)</div>
+</div>
+</body>
+</html>

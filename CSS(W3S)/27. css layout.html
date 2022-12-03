@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li {
+            display: inline;
+            padding: 20px;
+
+        }
+        span {
+            display: block;
+ 
+        }
+        a {
+            display: block;
+
+        }
+
+        /* 페이지 내의 공간을 차지하지 않음 */
+        h1.hidden {
+            display: none;
+
+        }
+        /* 페이지 내의 공간을 일부 차지함 */
+        h1.hidden2 {
+           visibility: hidden;
+
+        } 
+        div.ex1 {
+            width: 500px;
+            margin: auto;
+            border: 3px solid #73AD21;
+        }
+        div.ex2 {
+            max-width: 500px;
+            margin: auto;
+            border: 3px solid #73AD21;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Display a list of links as a horizontal menu:</p>
+    <ul>
+        <li><a href="/html/default.asp" target="_blank">HTML</a></li>
+        <li><a href="/css/default.asp" target="_blank">CSS</a></li>
+        <li><a href="/js/default.asp" target="_blank">JavaScript</a></li>
+    </ul>
+
+
+    <h1>Display span elements as block elements</h1>
+    <span>A display property with</span> 
+    <span>a value of "block" results in</span> 
+    <span>a line break between each span elements.</span>
+
+
+    <h1>Display links as block elements</h1>
+    <a href="/html/default.asp" target="_blank">HTML</a>
+    <a href="/css/default.asp" target="_blank">CSS</a>
+    <a href="/js/default.asp" target="_blank">JavaScript</a>
+
+    <h1 class="hidden">This is a Hidden Heading:display none</h1>
+    <h1 class="hidden2">This is a Hidden Heading:visibility hidden</h1>
+    <h1>This is none</h1>
+
+    <h2>CSS Max-width</h2>
+    <div class="ex1">This div element has width: 500px;</div>
+    <br>
+    <div class="ex2">This div element has max-width: 500px;</div>
+    <p><strong>Tip:</strong> Drag the browser window to smaller than 500px wide, to see the difference between 
+    the two divs!</p>
+
+</body>
+</html>

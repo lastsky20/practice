@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.static {
+            position: static;
+            border: 3px solid #73AD21;
+        }
+        div.relative {
+            position: relative;
+            left: 30px;
+            border: 3px solid #73AD21;
+        }
+        div.fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            border: 3px solid #73AD21;
+        }
+
+        div.relative {
+            /position: relative; /*normal position */
+            width: 400px;
+            height: 200px;
+            border: 3px solid #73AD21;
+        } 
+
+        div.absolute2 {
+            position: absolute;  /*relative to the HTML page.*/
+            top: 80px;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid #73AD21;
+        }
+
+        div.sticky {
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: #cae8ca;
+            border: 2px solid #4CAF50;
+        }
+
+
+        .container {
+            position: relative;
+        }
+
+        .topleft {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 18px;
+
+        }   
+        .topright {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 18px;
+
+        }
+
+        .bottomleft {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 18px;
+        }
+        .bottomright {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 18px;
+        }
+        .centerd {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        img { 
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+        }
+
+        /*         
+        Property	Description
+        bottom	Sets the bottom margin edge for a positioned box
+        clip	Clips an absolutely positioned element
+        left	Sets the left margin edge for a positioned box
+        position	Specifies the type of positioning for an element
+        right	Sets the right margin edge for a positioned box
+        top	Sets the top margin edge for a positioned box 
+        */
+
+
+    </style>
+
+</head>
+<body>
+    <div class="static">This div element has position: static;</div>
+    <div class="relative">This div element has position: relative;</div>
+    <div class="fixed">This div element has position: fixed;</div>
+    <div class="relative">This div element has position: relative;
+        <div class="absolute2">This div element has position: absolute;</div>
+      </div>
+
+<p>Try to <b>scroll</b> inside this frame to understand how sticky positioning works.</p>
+
+<div class="sticky">I am sticky!</div>
+
+<div style="padding-bottom:2000px">
+  <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+  <p>Scroll back up to remove the stickyness.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</div>
+
+<div class="container">
+    <img src="https://www.w3schools.com/css/img_5terre_wide.jpg" alt="Cinque Terre" width="1000" height="300">
+    <div class="topleft">Top Left</div>
+    <div class="topright">Top Right</div>
+    <div class="bottomleft">Bottom Left</div>
+    <div class="bottomright">Bottom Right</div>
+    <div class="centerd">Centerd</div>
+</div>
+
+</body>
+</html>
