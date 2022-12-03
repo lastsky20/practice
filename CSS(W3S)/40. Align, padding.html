@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            padding: 70px 0;
+            border: 3px solid green;
+            width: 500px;
+            text-align: center;
+            margin: 3px;
+        }
+
+        .center2 {
+            line-height: 200px;
+            height: 200px;
+            border: 3px solid green;
+            width: 500px;
+            text-align: center;
+            margin: 3px;
+        }
+
+        .center2 .cp2 {
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .center3 { 
+            height: 200px;
+            position: relative;
+            border: 3px solid green; 
+            margin: 3px;
+        }
+
+        .center3 .cp3 {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            
+        }
+
+        .center4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 3px solid green; 
+            margin: 3px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="center">
+        <p>I am vertically centered.</p>
+    </div>
+
+    <div class="center2">
+        <p class="cp2">I am vertically and horizontally centered.</p>
+    </div>
+
+    <div class="center3">
+        <p class="cp3">I am vertically and horizontally centered.</p>
+    </div>
+
+    <div class="center4">
+        <p class="cp4">I am vertically and horizontally centered.</p>
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        
+    <style> 
+        .center {
+            margin: auto;   /* center align Elements */
+            text-align: center;/* center align Text */
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+        img {
+            display: block;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .right {    /* position 과 right 설저을 통한 우측정렬 */
+            right: 50px;    
+            
+            position: absolute;
+            border: 2px solid green;
+            width: 300px;
+            padding: 10px;
+        }
+
+        .right2 {  /* float 를 사용한 좌측 정렬*/
+            float : left;
+            border: 3px solid green;
+            width: 300px;
+            padding: 10px;
+        }
+
     </style>
 </head>
 <body>
-    
+    <div class="center"><h1>Center Align Elements</h1></div>
+    <img src="https://www.w3schools.com/css/paris.jpg" alt="paris" style="width:40%">
+
+    <div class="right">
+        <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+    </div>
+    <br>
+    <div class="right2">
+        <p>In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.</p>
+    </div>
 </body>
 </html>
