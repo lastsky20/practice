@@ -7,10 +7,84 @@
     <title>Document</title>
     <style>
 
+    .cld1 p {
+        background-color: yellow;
+        width: 500px;
+    }
+
+    .cld2 > p {
+        background-color: yellow;
+        width: 300px;
+    }
+
+    .cld3 + p {
+        background-color: yellow;
+    }
+
+    .cld4 + p {
+        background-color: yellow;
+    }
+
+    .cld5 ~ p {
+        background-color: yellow;
+    }
         
     </style>
 </head>
 <body>
+    <h1>combinator : 조합자</h1>
+    <h1>Descendant Selector : 상속자</h1>
+    <div class="cld1">
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <section><p>Paragraph 3 in the div.</p></section>
+    </div>
+    <p>Paragraph 4. Not in a div.</p>
+    <p>Paragraph 5. Not in a div.</p>
+
+    <h1>Child Selector</h1>
+    <div class="cld2">
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <section>
+          <!-- not Child but Descendant -->
+          <p>Paragraph 3 in the div (inside a section element).</p>
+        </section>
+        <p>Paragraph 4 in the div.</p>
+    </div>
+      
+    <p>Paragraph 5. Not in a div.</p>
+    <p>Paragraph 6. Not in a div.</p>
+
+
+    <h1>Adjacent Sibling Selector : 인접한 1개의 태그 선택</h1>
+
+    <div class="cld3">
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+    </div>
+
+    <p>Paragraph 3. After a div.</p>
+    <p>Paragraph 4. After a div.</p>
+
+    <div class="cld4">
+        <p>Paragraph 5 in the div.</p>
+        <p>Paragraph 6 in the div.</p>
+    </div>
+
+    <p>Paragraph 7. After a div.</p>
+    <p>Paragraph 8. After a div.</p>
+
+
+    <h1>General Sibling Selector : 인접한 전체 태그 선택</h1>
+    <p>Paragraph 1.</p>
+    <div class="cld5">
+    <p>Paragraph 2.</p>
+    </div>
+    <p>Paragraph 3.</p>
+    <code>Some code.</code>
+    <p>Paragraph 4.</p>
+    <p>Paragraph 5.</p>
     
 </body>
 </html>

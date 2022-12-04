@@ -1,5 +1,35 @@
-anime style
+프롬프트 엔지니어링
 
 
 안경
 wearing glasses - 안경을 쓰다
+
+
+photorealistic
+hyperrealistic, 
+high skin texture, 
+depth of field, 
+photography. 
+4k
+
+golden dollar mecha, wallpaper, in octane render, hyper-detailed, photo-realistic fresh
+
+
+--- 스타일
+Retro
+anime style - 구제 만화 스타일
+watercolor - 수채화
+character in the style of Pixar - 픽사 에니메이션 스타일
+low light balance - 저 조도
+
+--- 디자이너
+-- art by
+
+alex ross - 만화 삽화 / DC Comics
+L.S. Lowry
+Redjuice - 일러스트레이터
+
+
+
+J. C. Leyendecker, boris vallejo, Spaceship, Retro, Art, Pulp, spaceship advertisement,  --v 4
+holli would . character concept art. art by Tomer Hanuka and Atey Ghailan and Roy Lichtenstein. vibrant colours --ar 2:3  --v 4
