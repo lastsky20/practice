@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style> 
+        div.demo1 img {
+            opacity: 0.5;
+        }
+        
+        div.demo1 img:hover {
+            opacity: 1;
+        }
+
+        .demo2 img:hover {
+            opacity: 0.5;
+        }
+
+
+        .first, .second, .third, .fourth {
+            background-color: green;
+            padding: 10px;
+        }
+        .first {
+            opacity: 0.1;
+        }
+        .second {
+            opacity: 0.3;
+        }
+        .third {
+            opacity: 0.6;
+        }
+        .fourth {
+            opacity: 1;
+        }
+
+        div#demo2 {
+            padding: 10px;
+        }
+
+        div.first2 {
+            background: rgba(76, 175, 80, 0.1);
+        }
+        .second2 {
+            background: rgba(76, 175, 80, 0.3);        
+        }
+        .third2 {
+            background: rgba(76, 175, 80, 0.6);        
+        }
+        .fourth2 {
+            background-color: rgb(76, 175, 80);
+            padding: 10px;
+        }
+
+        div.background {
+            background: url("https://www.w3schools.com/css/klematis.jpg") repeat;
+            border: 2px solid black;
+        }
+
+        div.transbox {
+            margin: 30px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+        }
+
+        div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Image Transparency</h1>
+    <p>The opacity property is often used together with the :hover selector to change the opacity on mouse-over:</p>
+    <div class="demo1">
+        <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="170" height="100">
+        <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains" width="170" height="100">
+        <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Italy" width="170" height="100">
+    </div>
+
+    <div class="demo2">
+        <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="170" height="100">
+        <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains" width="170" height="100">
+        <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Italy" width="170" height="100">
+    </div>
+
+    <div class="first"><p>opacity 0.1</p></div>
+    <div class="second"><p>opacity 0.3</p></div>
+    <div class="third"><p>opacity 0.6</p></div>
+    <div class="fourth"><p>opacity 1 (default)</p></div>
+
+    <div id="demo2" class="first2"><p>opacity 0.1</p></div>
+    <div id="demo2" class="second2"><p>opacity 0.3</p></div>
+    <div id="demo2" class="third2"><p>opacity 0.6</p></div>
+    <div id="demo2" class="fourth2"><p>opacity 1 (default)</p></div>
+
+    <div class="background">
+        <div class="transbox">
+          <p>This is some text that is placed in the transparent box.</p>
+        </div>
+      </div>
+
+
+</body>
+</html>

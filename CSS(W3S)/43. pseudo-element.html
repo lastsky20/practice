@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        P.demo1::first-line {
+            color: red;
+            font-variant: small-caps;
+        }
+        p.demo1::first-letter {
+            color: purple;
+            font-size: xx-large;
+        }
+        div.demo2 h1::before {
+            content: url("https://www.w3schools.com/css/smiley.gif");
+        }
+        div.demo2 h2::after{
+            content: url("https://www.w3schools.com/css/smiley.gif");
+        }
+        div.demo3 ::marker {
+            color: red;
+            font-size: 23px;
+        }
+        div.demo3 ::selection {
+            color: red;
+            background-color: yellow;
+        }
+
+        div.demo3 {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <p class="demo1">You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+    
+    <div class="demo2">
+        <h1>This is a heading</h1>
+        <p>The ::before pseudo-element inserts content before the content of an element.</p>
+        <h1>This is a heading</h1>
+        <h2>This is a heding</h2>
+        <h2>This is a heding</h2>
+    </div>
+
+    <div class="demo3">
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ol>
+    </div>
+</body>
+</html>
