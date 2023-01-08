@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            color: white;
+            background-color: green;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-contents {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right:0;
+            min-width: 160px;
+        }
+
+        .dropdown-contents a {
+            color : black;
+            text-align: left;
+            padding: 12px 16px;
+            display: block;
+            
+            
+            text-decoration: none;
+
+        }
+        .dropdown:hover .dropdown-contents {
+            display: block;
+        }
+
+        .dropdown-contents a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h2>Dropdown Menu Button</h2>
+    <p>Move the mouse over the button to open the dropdown menu.</p>
+    <div class="dropdown" style="float:left">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-contents" style="left:0">
+            <a href="#link1">Link1</a>
+            <a href="#link2">Link2</a>
+            <a href="#link3">link3</a>
+        </div>
+    </div>
+
+    <div class="dropdown" style="float:right">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-contents">
+            <a href="#link1">Link1</a>
+            <a href="#link2">Link2</a>
+            <a href="#link3">link3</a>
+        </div>
+    </div>
+    <p><strong>Note:</strong> We use href="#" for test links. In a real web site this would be URLs.</p>
+
+
+</body>
+</html>
