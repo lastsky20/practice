@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  counter-reset: section;
+}
+
+h2::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+.demo1 h1 {
+  counter-reset: subsection;
+}
+
+.demo1 h1::before {
+  counter-increment: section;
+  content: "Section " counter(section) ". ";
+}
+
+.demo1 h2::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+
+</style>
+</head>
+<body>
+
+<h1>Using CSS Counters</h1>
+
+<h2>HTML Tutorial</h2>
+<h2>CSS Tutorial</h2>
+<h2>JavaScript Tutorial</h2>
+<h2>Python Tutorial</h2>
+<h2>SQL Tutorial</h2>
+
+<div class="demo1">
+    <h1>HTML/CSS Tutorials</h1>
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <h2>Bootstrap</h2>
+    <h2>W3.CSS</h2>
+
+    <h1>Scripting Tutorials</h1>
+    <h2>JavaScript</h2>
+    <h2>jQuery</h2>
+    <h2>React</h2>
+
+    <h1>Programming Tutorials</h1>
+    <h2>Python</h2>
+    <h2>Java</h2>
+    <h2>C++</h2>
+</div>
+
+</body>
+</html>
+
+

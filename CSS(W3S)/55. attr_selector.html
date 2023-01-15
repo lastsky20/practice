@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    a[target] {
+    background-color: yellow;
+    }
+    a[target="_blank"] {
+        background-color: green;
+    }
+    [title~=flower] {   /* flower 단어를 포함하는 속성*/
+        border: 5px solid yellow;
+    }
+    .demo1 [class|=top] { /*test 문자열이 포함된 속성*/
+        background: yellow;
+    }
+
+    .demo2 [class^="top"] { /*top 문자열로 시작하는 속성*/
+        background: yellow;
+    }
+    .demo3 [class$="test"] { /* text 로 문자열로 끝나는 속성*/
+        background: yellow;
+    }
+    .demo4 [class*="te"] { /* te 문자열이 포함된 모든 속성*/
+        background: yellow;
+    }
+
+    .demo5 input[type=text] {
+        width: 150px;
+        display: block;
+        margin-bottom: 10px;
+        background-color: yellow;
+    }
+
+    .demo5 input[type=button] {
+        width: 120px;
+        margin-left: 35px;
+        display: block;
+    }
+    
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute] Selector</h2>
+<p>The links with a target attribute gets a yellow background:</p>
+<div>
+    <a href="https://www.w3schools.com">w3schools.com</a>
+    <a href="http://www.disney.com" target="_blank">disney.com</a>
+    <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+</div>
+<div>
+    <img src="https://www.w3schools.com/css/klematis.jpg" title="klematis flower" width="150" height="113">
+    <img src="https://www.w3schools.com/css/img_flwr.gif" title="flower" width="224" height="162">
+    <img src="https://www.w3schools.com/css/img_tree.gif" title="tree" width="200" height="358">
+</div>
+<div class="demo1">
+    <h1 class="top-header">Welcome</h1>
+    <p class="top-text">Hello world!</p>
+    <p class="topcontent">Are you learning CSS?</p>
+</div>
+<div class="demo2">
+    <h2>CSS [attribute^="value"] Selector</h2>
+
+    <h1 class="top-header">2. Welcome</h1>
+    <p class="top-text">2. Hello world!</p>
+    <p class="content-top">2. Are you learning CSS?</p>
+</div>
+
+<div class="demo3">   
+    <h2>CSS [attribute$="value"] Selector</h2>
+
+    <div class="first_test">3. The first div element.</div>
+    <div class="test_second">3. The second div element.</div>
+    <div class="my-test">3. The third div element.</div>
+    <p class="mytest">3. This is some text in a paragraph.</p>
+</div>
+
+<div class="demo4">
+    <h2>CSS [attribute*="value"] Selector</h2>
+
+    <div class="first_test">4. The first div element.</div>
+    <div class="second">4. The second div element.</div>
+    <div class="my-test">4. The third div element.</div>
+    <p class="mytest">4. This is some text in a paragraph.</p>
+</div>
+
+<div class="demo5">
+    <h2>Styling Forms</h2>
+
+    <form name="input" action="" method="get">
+        Firstname:<input type="text" name="Name" value="Peter" size="20">
+        Lastname:<input type="text" name="Name" value="Griffin" size="20">
+        <input type="button" value="Example Button">
+    </form>
+</div>
+</body>
+</html>

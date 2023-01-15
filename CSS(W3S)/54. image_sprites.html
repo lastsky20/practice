@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navlist {
+            position: relative;
+
+        }
+
+        #navlist li a{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            top: 0;
+        }
+
+        #navlist li, #navlist a {
+            height: 44px;
+            display: block;
+        }
+
+        #home a{
+            left: 0px;
+            width: 46px;
+            background: url('https://www.w3schools.com/css/img_navsprites_hover.gif') 0 0;
+            opacity: 1;
+            
+        }
+
+        #prev a{
+            left: 63px;
+            width: 43px;
+            background: url('https://www.w3schools.com/css/img_navsprites_hover.gif') -47px 0;
+        }
+        #next a{
+            left: 129px;
+            width: 43px;
+            background: url('https://www.w3schools.com/css/img_navsprites_hover.gif') -91px 0;
+        }
+/* 
+        #home a:hover {
+            background: url('https://www.w3schools.com/css/img_navsprites_hover.gif') 0 -45px;
+        }
+
+        #prev a:hover {
+            background: url('https://www.w3schools.com/css/img_navsprites_hover.gif') -47px -45px;
+        }
+
+        #next a:hover {
+            background: url('https://www.w3schools.com/css/img_navsprites_hover.gif') -91px -45px;
+        } */
+
+        #home a:hover{
+            opacity: 0.5;
+        }
+        #prev a:hover {
+            opacity: 0.5;
+        }
+        #next a:hover {
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul id="navlist">
+        <!-- <li id="home"><a href="#home"></a></li>
+        <li id="prev"><a href="#prev"></a></li>
+        <li id="next"><a href="#next"></a></li> -->
+        <li id="home"><a href="#home"></a></li>
+        <li id="prev"><a href="#prev"></a></li>
+        <li id="next"><a href="#next"></a></li>
+    </ul>
+    
+</body>
+</html>

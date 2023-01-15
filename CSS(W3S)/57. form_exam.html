@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo1 input {
+            width: 100%;
+        }
+
+        .demo2 input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .demo3 input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+        .demo4 input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+
+        .demo5 input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #3CBC8D;
+            color: white;
+        }
+
+        .demo6 input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            /* border: 1px solid #555; */
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            /* transition: 0.5s; */
+            outline: none;
+        }
+
+        /* .demo6 input[type=text]:focus {
+            background-color: lightblue;
+        } */
+
+        .demo6 input[type=text]:focus {
+            border: 3px solid #555;
+        }
+
+        .demo7 input[type=text] {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('https://www.w3schools.com/css/searchicon.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+        }
+
+        .demo8 input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('https://www.w3schools.com/css/searchicon.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            transition: width 0.4s ease-in-out;
+        }
+
+        .demo8 input[type=text]:focus {
+            width: 50%;
+        }
+
+        .demo9 textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+
+        .demo10 select {
+            width: 30%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+        .demo11 input[type=button], input[type=submit], input[type=reset] {
+            /* width: 100%; */
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<h2>A full-width input field</h2>
+
+<div class="demo1">
+    <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname">
+    </form>
+</div>
+
+<div class="demo2">
+    <h2>Padded input fields</h2>
+
+    <form>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname">
+    </form>
+</div>
+
+<div class="demo3">
+    <h2>Input fields with borders</h2>
+
+    <form>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname">
+    </form>
+</div>
+
+<div class="demo4">
+    <h2>Input fields with bottom border</h2>
+
+    <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname">
+    </form>
+</div>
+
+<div class="demo5">
+    <h2>Input fields with color</h2>
+
+    <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" value="John">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+</div>
+
+<div class="demo6">
+    <h2>Input fields with color on :focus</h2>
+
+    <p>Here, the input field gets a color when it gets focus (clicked on):</p>
+
+    <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" value="John">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+</div>
+
+<div class="demo7">
+    <h2>Input field with an icon inside</h2>
+
+    <form>
+        <input type="text" name="search" placeholder="Search..">
+    </form>
+</div>
+
+<div class="demo8">
+    <h2>Animate width of search input</h2>
+
+    <form>
+        <input type="text" name="search" placeholder="Search..">
+    </form>
+</div>
+
+<div class="demo9">
+    <h2>Styling textarea</h2>
+
+    <p><strong>Tip:</strong> Use the resize property to prevent textareas from being resized (disable the "grabber" in the bottom right corner):</p>
+
+    <form>
+        <textarea>Some text...</textarea>
+    </form>
+</div>
+
+<div class="demo10">
+    <h2>Styling a select menu</h2>
+
+    <form>
+        <select id="country" name="country">
+            <option value="au">Australia</option>
+            <option value="ca">Canada</option>
+            <option value="usa">USA</option>
+        </select> 
+    </form>
+</div>
+
+<div class="demo11">
+    <h2>Styling form buttons</h2>
+
+    <input type="button" value="Button">
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit">
+</div>
+
+</body>
+</html>
