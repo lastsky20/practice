@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/css/border.png) 30 round;
+}
+#borderimg2 { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/css/border.png) 30 stretch;
+}
+#borderimg3 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/css/border.png) 50 round;
+}
+
+#borderimg4 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/css/border.png) 20% round;
+}
+
+#borderimg5 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/css/border.png) 30% round;
+}
+</style>
+</head>
+<body>
+
+<h1>The border-image Property</h1>
+
+<p>Here, the middle sections of the image are repeated to create the border:</p>
+<p id="borderimg">border-image: url(border.png) 30 round;</p>
+<p id="borderimg2">border-image: url(border.png) 30 stretch;</p>
+
+<p id="borderimg3">border-image: url(border.png) 50 round;</p>
+<p id="borderimg4">border-image: url(border.png) 20% round;</p>
+<p id="borderimg5">border-image: url(border.png) 30% round;</p>
+
+<p>Here is the original image:</p><img src="https://www.w3schools.com/css/border.png">
+<p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not support the border-image property.</p>
+
+</body>
+</html>
+
+

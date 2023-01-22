@@ -5,6 +5,21 @@
         <title>htmlPractice1</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- 기본 선택자 -->
+    <!-- 선택자 우선순위 : inline style > id > class > element -->
+
+    
+    <!-- Selector	Specificity Value	Calculation
+          p   	1	1
+          p.test	11	1 + 10
+          p#demo	101	1 + 100
+          <p style="color: pink;">	1000	1000
+          #demo	100	100
+          .test	10	10
+          p.test1.test2	21	1 + 10 + 10
+          #navbar p#demo	201	100 + 1 + 100
+          *	0	0 (the universal selector is ignored) -->
+          
+
     <style>
       p {
             background-color: yellow;

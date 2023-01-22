@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1 {
+            left: 50px;
+            width: calc(100% - 100px);
+            border: 1px solid black;
+            background-color: yellow;
+            padding: 5px;
+        }
+        /* can used : "+ - * /" */
+
+        #div2 {
+            background-color: yellow;
+            height: 100px;
+            width: max(50%, 300px);
+        }
+        /* 50% 또는 300px 중 큰 값으로 적용 */
+
+        #div3 {
+            background-color: yellow;
+            height: 100px;
+            width: min(50%, 300px);
+        }
+        /* 50% 또는 300px 중 작은 값으로 적용 */
+
+    </style>
+
+</head>
+<body>
+    <h1>The calc() Function</h1>
+    <p>Create a div that stretches across the window, with a 50px gap between both sides of the div and the edges of the window:</p>
+    <div id="div1">Some text...</div>
+
+    <h1>The max() Function</h1>
+    <div id="div2">Some text...</div>
+
+    <h1>The min() Function</h1>
+    <div id="div3">Some text...</div>
+
+
+    
+
+</body>
+</html>
