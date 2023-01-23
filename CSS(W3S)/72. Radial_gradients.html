@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#grad1 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(red, yellow, green);
+}
+#grad2 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+#grad3 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(red, yellow, green);
+}
+
+#grad4 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, red, yellow, green);
+}
+
+#grad5 {
+  height: 150px;
+  width: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+}
+
+#grad6 {
+  height: 150px;
+  width: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+}
+
+#grad7 {
+  height: 150px;
+  width: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(closest-corner at 60% 55%, red, yellow, black);
+}
+
+#grad8 {
+  height: 150px;
+  width: 150px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(farthest-corner at 60% 55%, red, yellow, black);
+}
+
+</style>
+</head>
+<body>
+
+<h1>Radial Gradient - Evenly Spaced Color Stops</h1>
+
+<div id="grad1"></div>
+<div id="grad2"></div>
+
+<h1>Radial Gradient - Shapes</h1>
+
+<h2>Ellipse (this is default):</h2>
+<div id="grad3"></div>
+
+<h2><strong>Circle:</strong></h2>
+<div id="grad4"></div>
+
+<h1>Radial Gradients - Different size keywords</h1>
+
+<h2>closest-side:</h2>
+<div id="grad5"></div>
+
+<h2>farthest-side:</h2>
+<div id="grad6"></div>
+
+<h2>closest-corner:</h2>
+<div id="grad7"></div>
+
+<h2>farthest-corner (default):</h2>
+<div id="grad8"></div>
+
+</body>
+</html>
+
+

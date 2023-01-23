@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+
+body {
+    height: auto;
+}
+
+.anmT {
+    animation-name: exam1;
+    animation-duration: 0.5s;
+}
+
+@keyframes exam1 {
+    from{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.anm {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.demo1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example1;
+  animation-duration: 4s;
+}
+
+@keyframes example1 {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+.demo2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example2;
+  animation-duration: 4s;
+}
+
+@keyframes example2 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+.demo3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example3;
+    animation-duration: 4s;
+    /* animation-delay: 2s; */
+    /* animation-delay: -2s; */
+    animation-iteration-count: 3;
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: reverse; */
+    /* animation-direction: alternate; */
+    animation-direction: alternate-reverse;
+    /* animation: example3 5s linear 2s infinite alternate;  */ /* Shorts Hand */
+
+}
+
+@keyframes example3 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+.anm2 {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 300px;}
+}
+
+.demo4 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation-name: example4;
+  animation-duration: 3s;  
+  /* animation-fill-mode: forwards; */
+  /* animation-fill-mode: backwards; */
+    animation-fill-mode: both;
+}
+
+@keyframes example4 {
+  from {top: 0px;}
+  to {top: 200px; background-color: blue;}
+}
+
+
+</style>
+</head>
+<body>
+    <div class="anm">
+        <h1 class="anmT">CSS Animation(transform)</h1>
+        <div class="demo1"></div>
+        <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+    
+        <h1>CSS Animation</h1>
+        <div class="demo2"></div>
+        <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+    
+        <h1>CSS Animation</h1>
+        <div class="demo3"></div>
+        <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+    </div>
+
+    <div class="anm2" id="div1">linear</div>
+    <div class="anm2" id="div2">ease</div>
+    <div class="anm2" id="div3">ease-in</div>
+    <div class="anm2" id="div4">ease-out</div>
+    <div class="anm2" id="div5">ease-in-out</div>
+
+    <div class="demo4">demo4</div>
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,314 @@
+window.wadiz = window.wadiz || {};
+window.wadiz.browser = window.wadiz.browser || {};
+var ua = navigator.userAgent.toLowerCase();
+var isIos = wadiz.browser.isIos;
+var isAndroid = wadiz.browser.isAndroid;
+var isIosApp = wadiz.browser.isWadizIosApp;
+var isAndroidApp = wadiz.browser.isWadizAndroidApp;
+
+(function($) {
+  var $window = $(window);
+  var $body;
+
+  // dom ready
+  $(document).ready(function(){
+    $body = $(document.body);
+
+    // IE 구버전일 경우 메시지 표시
+    var isOldIE = ua.match(/MSIE (\d+)/i);
+    if (isOldIE && parseInt(isOldIE[1], 10) <= 10) {
+      oldIEMessage();
+        }
+  }); // dom ready
+
+  // window.wadiz
+  window.wadiz = window.wadiz || {};
+
+  // 로그인 메시지
+  if (!wadiz.requireLogin) {
+    wadiz.requireLogin = function(message) {
+      var href = location.href;
+      if (!location.hash) {
+        var scrollTop = $(window).scrollTop();
+        href = href + '#afterLogin_' + scrollTop;
+      }
+      var loginConfirm = wadiz.confirm({
+        basic: false,
+        labelApprove: '로그인',
+        message: message || '로그인이 필요합니다.'
+      }, function() {
+        var loginPage = '/web/waccount/wAccountLogin';
+        location.href = loginPage + '?returnURL=' + encodeURIComponent(href);
+      });
+      return loginConfirm;
+    };
+    (function(hash) {
+      if (!hash) return;
+      var afterLogin = hash.match(/^#afterLogin\_([0-9]+)$/);
+      if (afterLogin && afterLogin[1]) {
+        $(document).ready(function() {
+          $(window).scrollTop(afterLogin[1]);
+          if (window.history.replaceState) {
+            var path = location.href.replace(afterLogin[0], '');
+            window.history.replaceState(null, null, path);
+          }
+        });
+      }
+    })(location.hash);
+  }
+
+  // 액션바 반응형 적용시 show/hide 설정
+  if (!wadiz.handleActionBar) {
+    wadiz.handleActionBar = function(options) {
+      var breakpointMinWidth = options.breakpointMinWidth || 1096;
+      var $main = $(options.main);
+      var $actionBar = $(options.actionBar);
+      if (!$main.length) return;
+      function actionBarHandler() {
+        var hideActionBar;
+        var display = $actionBar.css('display');
+        var position = $actionBar.css('position');
+        if (display !== 'none' && position === 'fixed') {
+          var top = $window.scrollTop();
+          var contentTop = $main.offset().top || options.startTop || 0;
+          var contentStart = ($window.height() - contentTop) + ($actionBar.height() * 2); // 콘텐츠 시작점(194) - 뷰포트 높이 + 액션바 높이의 두배
+          var contentEnd = (contentTop + $main.outerHeight()) - $window.height();
+          hideActionBar = top < contentStart || top > contentEnd;
+        } else {
+          hideActionBar = true;
+        }
+        $main.trigger((hideActionBar ? 'hide' : 'show') + '.actionbar');
+        if (wadiz._showingActionBar !== !hideActionBar) {
+          var changeEvent = new CustomEvent('visibility:actionbar', {
+            bubbles: true,
+            detail: { visible: !hideActionBar }
+          });
+          if ($actionBar.length) {
+            $actionBar[0].dispatchEvent(changeEvent);
+          }
+        }
+        wadiz._showingActionBar = !hideActionBar;
+      }
+      $window.on('scroll.actionbar resize.actionbar', actionBarHandler);
+      actionBarHandler();
+      return $main;
+    };
+        }
+
+  // IE10 이하에 메시지 삽입
+  function oldIEMessage() {
+    if (wadiz.cookie.get("wadizOldIEMsg") === 'N') {
+      return;
+    }
+
+    var ieUpdateURL = 'https://windows.microsoft.com/en-us/internet-explorer/download-ie';
+    var chromeInstallURL = 'https://www.google.co.kr/intl/ko/chrome/browser/desktop/';
+
+    var html = '<div class="old-ie-msg" style="position:relative;left:0;top:0;z-index:99999;width:100%;height:55px;background-color:#f5f7fa;line-height:55px;color:#34383a;font-size:13px;overflow:hidden">';
+    html += '<p style="padding-left:24px;padding-right:80px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><span style="color:#fc4d54">Internet Explorer 하위 버전</span>을 사용하고 있습니다. 안전한 펀딩을 위해 <span style="color:#4462ee">최신 브라우저로 업그레이드</span> 하거나 <span style="color:#4462ee">새로운 브라우저</span>를 사용하세요.<span>';
+    html += '<a href="' + ieUpdateURL + '" target="_blank" style="border:2px solid #babdc0;padding:5px;margin-left:10px;">익스플로러 업그레이드</a><a href="' + chromeInstallURL + '" target="_blank" style="border:2px solid #babdc0;padding:5px;margin-left:4px;">크롬 설치</a></span></p>';
+    html += '<button type="button" style="cursor:pointer;z-index:100000;border:0;position:absolute;top:0;right:0;width:55px;height:55px;background:#f5f7fa;padding-top:4px" onclick="closeOldIEMsg()">';
+    html += '<i class="wadizicon wa-close" style="font-size:16px"></i></button></div>';
+    var $msg = $(html);
+    if ($('#wadizTopBanner').is('.active')) {
+      $msg.css('position', 'absolute').prependTo(document.body);
+    } else {
+      $msg.prependTo(document.body);
+    }
+  }
+  function closeOldIEMsg(){
+    $('.old-ie-msg').remove();
+    //setTopBannerCookie("wadizOldIEMsg", "N", null);
+    document.cookie = "wadizOldIEMsg=N;path=/";
+  }
+  window.closeOldIEMsg = closeOldIEMsg;
+})(jQuery);
+
+var $popupScrollTop;
+
+/*공통레이어팝업열기*/
+function showLyPop(popName){
+  var $lypop = $('#'+popName+'Lypop');
+
+  $popupScrollTop = $(window).scrollTop();
+  $('.black-bg-wrap').show();
+  if ($lypop.hasClass('ui-flex-box')) {
+    if ($(document.documentElement).hasClass('msie')) {
+      $lypop.css('display', 'block');
+    } else {
+      $lypop.css('display', 'flex');
+    }
+  } else {
+    $lypop.show().focus();
+  }
+
+  window.lyPopOpened = true;
+}
+
+/*공통레이어팝업닫기*/
+function closeLyPop(popName){
+  if ($('#couponRegisterViewr').length > 0) {
+    $('#couponRegisterViewr').attr('onClick', 'ajaxRegisterCoupon()');
+  }
+
+  $('.black-bg-wrap').hide();
+  $('#'+popName+'Lypop').css({ overflowY: '' }).hide();
+  $('body').css({ position: '', width: '', height: '', minHeight: '', top: '', paddingRight: '', boxSizing: '' });
+  $('html').removeClass('lypop').css('overflow-y','');
+  setTimeout(function() {
+    $(window).scrollTop($popupScrollTop);
+  }, 0);
+
+  window.lyPopOpened = false;
+    }
+
+function loginLink(loginAfterFunc){
+  if ($("#forwardForm #returnURL").val().length == 0) {
+    if (loginAfterFunc) {
+      var param = (location.search ? (location.search + '&') : '?') + '_signin_after_func=' + loginAfterFunc;
+      $("#forwardForm #returnURL").val(location.origin + location.pathname + param + location.hash);
+    } else {
+      $("#forwardForm #returnURL").val(location.href);
+    }
+  }
+  $("#forwardForm").attr("action", "/web/waccount/wAccountLogin").submit();
+}
+
+function loginEquityLink(){
+  if ($("#forwardForm #returnURL").val().length == 0) {
+    $("#forwardForm #returnURL").val(location.href);
+  }
+  $("<input>", { type: 'hidden', name: 'joinType', value: 'equity' }).appendTo('#forwardForm');
+  $("#forwardForm").attr("action", "/web/waccount/wAccountLogin").submit();
+}
+
+function registerLink(joinType){
+  $("#forwardForm #returnURL").val(location.href);
+  if (joinType) {
+    $("<input>", { type: 'hidden', name: 'joinType', value: joinType }).appendTo('#forwardForm');
+  }
+  $("#forwardForm").attr("action", "/web/waccount/wAccountRegistIntro").submit();
+}
+
+//15분마다 sessionConfirmFlag 체크 후
+//입력값 있을 시 자동 Session 갱신.
+//입력값 없을 시 자동 로그아웃.
+var sessionConfirmFlag = 'N';
+var sessionLoginStatus = '';
+function useSessionConfirm(){
+   $('body').keyup(function() {
+     sessionConfirmFlag = 'Y';
+  });
+
+    setTimeout(function () {
+      if(sessionConfirmFlag == 'Y'){
+          $.ajax({
+                url: "/web/waccount/refresh",
+                type: 'POST',
+                success: function(result) {}
+            });
+          sessionConfirmFlag = 'N';
+          useSessionConfirm();
+      }else{
+        sessionLoginStatus = 'N';
+       alertify.alert('30분동안 사용되지 않아<br/>로그아웃 되었습니다.<br/><br/>계속 작성하시려면 재로그인 후 이용해주세요.', function(e) {
+         var sessionUser = "${requestScope.USER_INFO.encUserId}";
+
+            if(e){
+            if (sessionUser.length > 0) {
+                  location.href = "/web/waccount/logout";
+            }else{
+              location.reload();
+            }
+            }
+         });
+      }
+   }, 1500000);
+}
+
+function goUserProfile(encUserId){
+  var loginSession = $("#sessionLoginCheck").val();
+  if (loginSession == "true") {
+   $.ajax({
+          url: "/web/wmypage/myprofile/ajaxGetDropUserYn",
+          type: 'POST',
+          data:{"encUserId" : encUserId},
+          success: function(result) {
+             if ("SUSS000" == result.code && "true" == result.success) {
+                if(result.message == 'Y'){
+                  alertify.alert("탈퇴한 회원입니다.");
+                }else{
+                location.href = "/web/wmypage/myprofile/fundinglist/" + encUserId;
+                }
+             }
+          }
+      });
+  }else{
+    var targetUrl = location.protocol + "//" + location.host + "/web/wmypage/myprofile/fundinglist/" + encUserId;
+    $("#forwardForm #returnURL").val(targetUrl);
+    loginLink();
+  }
+}
+
+function goMakerProfile(encUserId){
+  var loginSession = $("#sessionLoginCheck").val();
+  if (loginSession == "true") {
+   $.ajax({
+          url: "/web/wmypage/myprofile/ajaxGetDropUserYn",
+          type: 'POST',
+          data:{"encUserId" : encUserId},
+          success: function(result) {
+             if ("SUSS000" == result.code && "true" == result.success) {
+                if(result.message == 'Y'){
+                  alertify.alert("탈퇴한 회원입니다.");
+                }else{
+                location.href = "/web/wmypage/myprofile/makinglist/" + encUserId;
+                }
+             }
+          }
+      });
+  }else{
+    loginLink();
+  }
+}
+
+(function($) {
+  // Wmask
+  var maskStyle = {
+    position: 'fixed',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    background: 'rgba(0,0,0,.7)',
+    zIndex: 99999
+  };
+  var spinnerStyle = {
+    textAlign: 'center',
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%,-50%)'
+  };
+  var mask = $('<div>').css(maskStyle);
+  var spinner = $('<div>').addClass('wz loader large').css(spinnerStyle);
+  window.Wmask = {
+    on: function(opts) {
+      var options = opts || {};
+      if (this._mask) return;
+      this._mask = mask.appendTo(document.body);
+      if (options.spinnerText) {
+         spinner.addClass('text').css('color', '#fff').text(options.spinnerText);
+      }
+      if (options.spinner) {
+        spinner.appendTo(this._mask);
+      }
+      return spinner;
+    },
+    off: function() {
+      if (!this._mask) return;
+      this._mask.remove();
+      this._mask = null;
+    }
+  };
+})(jQuery);

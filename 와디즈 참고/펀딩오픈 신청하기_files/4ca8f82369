@@ -1,0 +1,5 @@
+
+    if(!window['__baclient__']) window.__baclient__ = {};
+    __baclient__.success = false;
+    __baclient__.message = 'not found apply';
+  
