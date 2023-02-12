@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container, .container2 {
+  position: relative;
+  width: 200px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image2 {
+    transition: .5s ease;
+    backface-visibility: hidden;
+    opacity: 1;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container2:hover .image {
+  opacity: 0.3;
+}
+
+.container2:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.text2 {
+  background-color: #4CAF50;
+  padding: 16px 32px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Fade in Overlay</h2>
+
+<div class="container">
+  <img src="https://www.w3schools.com/w3css/img_avatar.png" alt="Avatar" class="image">
+  <div class="overlay">
+    <div class="text">Hello World</div>
+  </div>
+</div>
+
+<div class="container2">
+    <img src="https://www.w3schools.com/w3css/img_avatar.png" alt="Avatar" class="image image2" style="width:100%">
+    <div class="middle">
+      <div class="text text2">John Doe</div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+

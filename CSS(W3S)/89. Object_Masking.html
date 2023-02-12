@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.mask1 {
+  -webkit-mask-image: url(w3logo.png);
+  mask-image: url(w3logo.png);
+  /* mast repeat */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;     
+ 
+}
+
+.mask2 {
+    -webkit-mask-image: linear-gradient(black, transparent);
+    mask-image: linear-gradient(black, transparent);
+}
+
+.mask3 {
+    max-width: 600px;
+    height: 350px;
+    overflow-y: scroll;
+    background: url(https://www.w3schools.com/css/img_5terre.jpg) no-repeat;
+    -webkit-mask-image: linear-gradient(black, transparent);
+    mask-image: linear-gradient (black, transparent);
+}
+.mask4 {
+    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+  mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+}
+.mask5 {
+    -webkit-mask-image: radial-gradient(ellipse, black 50%, rgba(0, 0, 0, 0.5) 50%);
+  mask-image: radial-gradient(ellipse, black 50%, rgba(0, 0, 0, 0.5) 50%);
+}
+</style>
+</head>
+<body>
+
+<h1>The mask-image Property</h1>
+
+<h3>An image with a mask layer image:</h3>
+<div class="mask1">
+<img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+</div>
+
+<h3>linear gradient</h3>
+<div class="mask2">
+<img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+</div>
+
+<h3>linear gradient2</h3>
+<div class="mask3">
+    <p>The Cinque Terre is a coastal area within Liguria, in the northwest of Italy. It lies in the west of La Spezia Province, and comprises five villages: Monterosso al Mare, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
+    <p>The Cinque Terre is a coastal area within Liguria, in the northwest of Italy. It lies in the west of La Spezia Province, and comprises five villages: Monterosso al Mare, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
+    <p>The Cinque Terre is a coastal area within Liguria, in the northwest of Italy. It lies in the west of La Spezia Province, and comprises five villages: Monterosso al Mare, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
+</div>
+
+<h3>radial gradient</h3>
+<div class="mask4">
+<img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+</div>
+
+<h3>radial gradient(an ellipse)</h3>
+<div class="mask5">
+<img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+</div>
+
+<h3>An SVG mask layer (formed as a triangle):</h3>
+<svg width="600" height="400">
+  <mask id="svgmask1">
+    <polygon fill="#ffffff" points="200 0, 400 400, 0 400"></polygon>
+  </mask>
+  <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.w3schools.com/css/img_5terre.jpg" mask="url(#svgmask1)"></image>
+</svg>
+
+
+<h3>An SVG mask layer (formed as a star):</h3>
+<svg width="600" height="400">
+  <mask id="svgmask2">
+    <polygon fill="#ffffff" points="100,10 40,198 190,78 10,78 160,198"></polygon>
+  </mask>
+  <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.w3schools.com/css/img_5terre.jpg" mask="url(#svgmask2)"></image>
+</svg>
+
+
+<h3>Original image:</h3>
+<img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+
+</body>
+</html>
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width:200px;
+            height:300px;
+        }
+        #img1 {
+            object-fit: cover;
+        }
+        #img2 {
+            object-fit: contain;
+        }
+        #img3 {
+            object-fit: fill;
+        }
+        #img4 {
+            object-fit: none;
+        }
+        #img5 {
+            object-fit: scale-down;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <h2>Image</h2>
+    <img src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300">
+    <h2>Image:cover</h2>
+    <img id="img1" src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300">
+
+    <h2>Image:contain</h2>
+    <img id="img2" src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300">
+
+    <h2>Image:fill</h2>
+    <img id="img3" src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300">
+
+    <h2>Image:none</h2>
+    <img id="img4" src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300">
+
+    <h2>Image:scale-down</h2>
+    <img id="img5" src="https://www.w3schools.com/css/paris.jpg" alt="Paris" width="400" height="300">
+
+    <div style="width:100%;height:400px;">
+        <img src="https://www.w3schools.com/css/rock600x400.jpg" alt="Norway" style="float:left;width:50%;height:100%;object-fit:cover;">
+        <img src="https://www.w3schools.com/css/paris.jpg" alt="Paris" style="float:left;width:50%;height:100%;object-fit:cover;">
+      </div>
+
+</body>
+</html>

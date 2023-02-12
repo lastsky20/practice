@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+
+        .btn11 .button {
+            float: left;
+            margin: 0;
+            border: 1px solid green;
+        }
+
+        .btn12 .button {
+            display: block;
+            margin: 0;
+            border: 1px solid green;
+        }
+
+        
+
+        .btn2 .button2 {background-color: #008CBA;} /* Blue */
+        .btn2 .button3 {background-color: #f44336;} /* Red */ 
+        .btn2 .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+        .btn2 .button5 {background-color: #555555;} /* Black */
+
+        .btn3 .button1 {font-size: 10px;}
+        .btn3 .button2 {font-size: 12px;}
+        .btn3 .button3 {font-size: 16px;}
+        .btn3 .button4 {font-size: 20px;}
+        .btn3 .button5 {font-size: 24px;}
+
+        .btn4 .button1 {padding: 10px 24px;}
+        .btn4 .button2 {padding: 12px 28px;}
+        .btn4 .button3 {padding: 14px 40px;}
+        .btn4 .button4 {padding: 32px 16px;}
+        .btn4 .button5 {padding: 16px;}
+
+        .btn5 .button1 {border-radius: 2px;}
+        .btn5 .button2 {border-radius: 4px;}
+        .btn5 .button3 {border-radius: 8px;}
+        .btn5 .button4 {border-radius: 12px;}
+        .btn5 .button5 {border-radius: 50%;}
+
+        .btn6 .button1 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #4CAF50;
+        }
+
+        .btn6 .button2 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+
+        .btn6 .button3 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #f44336;
+        }
+
+        .btn6 .button4 {
+            background-color: white;
+            color: black;
+            border: 2px solid #e7e7e7;
+        }
+
+        .btn6 .button5 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+
+        .btn7 .button1 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #4CAF50;
+        }
+
+        .btn7 .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn7 .button2 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+
+        .btn7 .button2:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+
+        .btn7 .button3 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #f44336;
+        }
+
+        .btn7 .button3:hover {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn7 .button4 {
+            background-color: white;
+            color: black;
+            border: 2px solid #e7e7e7;
+        }
+
+        .btn7 .button4:hover {background-color: #e7e7e7;}
+
+        .btn7 .button5 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+
+        .btn7 .button5:hover {
+            background-color: #555555;
+            color: white;
+        }
+
+        .btn8 .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .btn8 .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .btn9 .disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn10 .button1 {width: 250px;}
+        .btn10 .button2 {width: 50%;}
+        .btn10 .button3 {width: 100%;}
+
+        .btn11 .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .btn11:after { /* clear fix */
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .btn12 .button:not(:last-child) {
+            border-bottom: none; /* Prevent double borders */
+        }
+
+        .btn12 .button:hover {
+            background-color: #3e8e41;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            color: black;
+            font-size: 16px;
+            padding: 16px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="btn1">
+        <button>Default Button</button>
+
+        <a href="#" class="button">Link Button</a>
+
+        <button class="button">Button</button>
+
+        <input type="button" class="button" value="Input Button">
+    </div>
+
+    <div class="btn2">
+        <h2>button:Background color</h2>
+        <button class="button">Green</button>
+        <button class="button button2">Blue</button>
+        <button class="button button3">Red</button>
+        <button class="button button4">Gray</button>
+        <button class="button button5">Black</button>
+    </div>
+
+    <div class="btn3">
+    <h2>button:Size</h2>
+        <button class="button button1">10px</button>
+        <button class="button button2">12px</button>
+        <button class="button button3">16px</button>
+        <button class="button button4">20px</button>
+        <button class="button button5">24px</button>
+    </div>
+
+    <div class="btn4">
+        <h2>button:Padding</h2>
+        <button class="button button1">10px 24px</button>
+        <button class="button button2">12px 28px</button>
+        <button class="button button3">14px 40px</button>
+        <button class="button button4">32px 16px</button>
+        <button class="button button5">16px</button>
+    </div>
+
+    <div class="btn5">
+        <h2>button:Border Radius</h2>
+        <button class="button button1">2px</button>
+        <button class="button button2">4px</button>
+        <button class="button button3">8px</button>
+        <button class="button button4">12px</button>
+        <button class="button button5">50%</button>
+    </div>
+
+    <div class="btn6">
+        <h2>button:Color button</h2>
+        <button class="button button1">Green</button>
+        <button class="button button2">Blue</button>
+        <button class="button button3">Red</button>
+        <button class="button button4">Gray</button>
+        <button class="button button5">Black</button>
+    </div>
+
+    <div class="btn7">
+        <h2>button:Hover button</h2>
+        <button class="button button1">Green</button>
+        <button class="button button2">Blue</button>
+        <button class="button button3">Red</button>
+        <button class="button button4">Gray</button>
+        <button class="button button5">Black</button>
+    </div>
+    <div class="btn8">
+        <h2>button:Hover Shadow button</h2>
+        <button class="button button1">Shadow Button</button>
+        <button class="button button2">Shadow on Hover</button>
+    </div>
+
+    <div class="btn9">
+        <h2>button:Disable button</h2>
+        <button class="button">Normal Button</button>
+        <button class="button disabled">Disabled Button</button>
+    </div>
+
+    <div class="btn10">
+        <h2>button:Button Width, Resize Window</h2>
+        <button class="button button1">250px</button><br>
+        <button class="button button2">50%</button><br>
+        <button class="button button3">100%</button>
+    </div>
+
+    <div class="btn11">
+        <h2>button:Bordered Button Group</h2>
+        <button class="button">Button</button>
+        <button class="button">Button</button>
+        <button class="button">Button</button>
+        <button class="button">Button</button>
+    </div>
+
+    <div class="btn12">
+        <h2>button:Button Group(Block)</h2>
+        <button class="button">Button</button>
+        <button class="button">Button</button>
+        <button class="button">Button</button>
+        <button class="button">Button</button>
+    </div>
+
+    <div class="container">
+        <h2>button:Button On Image</h2>
+        <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Snow" style="width:100%">
+        <button class="btn">Button</button>
+      </div>
+
+</body>
+</html>
