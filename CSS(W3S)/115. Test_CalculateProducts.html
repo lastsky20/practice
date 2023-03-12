@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Homepage</title>
+  </head>
+  <style>
+    
+  </style>
+  <body>
+    <div class="box"></div>
+
+    <script>
+        function calculateProducts(boxLength, boxWidth, boxHeight, productLength, productWidth, productHeight) {
+            let boxVolume = boxLength * boxWidth * boxHeight;
+            let productVolume = productLength * productWidth * productHeight;
+            document.getElementById("demo").innerHTML = Math.floor(boxVolume / productVolume) + " products can fit in the box";
+        }
+
+        // let boxLength = 10;
+        // let boxWidth = 10;
+        // let boxHeight = 10;
+        // let productLength = 2;
+        // let productWidth = 2;
+        // let productHeight = 2;
+
+        // let numProducts = calculateProducts(boxLength, boxWidth, boxHeight, productLength, productWidth, productHeight);
+        // document.getElementById("demo").innerHTML = numProducts + " products can fit in the box";
+    </script>
+
+    <p id="demo"></p>
+    <button type="button" onclick="calculateProducts(400, 300, 250, 20, 100, 50)">Try it</button>
+    
+    
+    
+    
+  </body>
+</html>

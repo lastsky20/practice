@@ -18,6 +18,7 @@
       document.querySelector(".box").addEventListener("click", function() {
       var x = Math.floor(Math.random() * window.innerWidth);
       var y = Math.floor(Math.random() * window.innerHeight);
+      y = y - 20;
       this.style.left = x + "px";
       this.style.top = y + "px";
     });
